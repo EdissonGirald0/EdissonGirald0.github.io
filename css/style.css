@@ -2,6 +2,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #EBEDEF;
 }
 
 /* Estilos para el header */
@@ -125,4 +126,36 @@ footer nav ul li a:hover {
 /* Estilos para la siguiente sección */
 .next-section {
     padding: 50px 0; /* Espacio entre esta sección y la siguiente */
+}
+.portfolio-offer {
+    border: 2px solid #ccc; /* Agrega un borde sólido de color gris */
+    border-radius: 5px; /* Agrega esquinas redondeadas */
+    padding: 20px; /* Agrega relleno interno para separar el contenido del borde */
+    margin-bottom: 20px; /* Agrega margen inferior para separar las tarjetas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+    background-color: #fff; /* Agrega un color de fondo blanco */
+}
+
+/* Estilos adicionales para resaltar las tarjetas al pasar el ratón */
+.portfolio-offer:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+    transition: box-shadow 0.3s ease; /* Agrega una transición suave para la sombra */
+}
+.projects-list {
+    list-style: none; /* Quita los estilos de lista por defecto */
+    padding: 0; /* Elimina el relleno interno de la lista */
+}
+
+.projects-list li {
+    border: 2px solid #ccc; /* Agrega un borde sólido de color gris */
+    border-radius: 5px; /* Agrega esquinas redondeadas */
+    padding: 20px; /* Agrega relleno interno para separar el contenido del borde */
+    margin-bottom: 20px; /* Agrega margen inferior para separar los elementos de la lista */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+    background-color: #fff; /* Agrega un color de fondo blanco */
+}
+
+.projects-list li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+    transition: box-shadow 0.3s ease; /* Agrega una transición suave para la sombra */
 }
