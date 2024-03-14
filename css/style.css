@@ -188,3 +188,6 @@ footer nav ul li a:hover {
 .contact-info a:hover {
     color: inherit;
 }
+p {
+    text-align: left;
+}
