@@ -1,0 +1,128 @@
+/* Estilos para el cuerpo de la página */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    z-index: 100; /* Asegura que esté encima de todo */
+}
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+header nav ul li:first-child {
+    margin-left: 0;
+}
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+header nav ul li a:hover {
+    color: #ccc;
+}
+
+/* Estilos para el main */
+main {
+    top: 220px;
+    margin-top: 100px; /* Ajusta el espacio para el header */
+    min-height: calc(100vh - 200px); /* Resta el tamaño del header y footer */
+    padding-top: 60px; /* Ajusta el espacio para el header */
+    padding-bottom: 60px; /* Ajusta el espacio para el footer */
+    box-sizing: border-box;
+}
+
+/* Estilos para el último elemento */
+#portafolio {
+    margin-bottom: 100px; /* Ajusta el espacio para el footer */
+}
+
+/* Estilos para la sección */
+.section {
+    text-align: center;
+}
+.section h6 {
+    margin-right: 100%;
+}
+/* Estilos para la imagen de perfil */
+.profile-image {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px; /* Agrega margen inferior */
+    margin-top: 20px;
+}
+
+/* Estilos para el nombre */
+.name {
+    margin-top: 20px;
+    margin-bottom: 10px; /* Agrega margen inferior */
+}
+
+/* Estilos para el footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    z-index: 100; /* Asegura que esté encima de todo */
+}
+/* Estilos para el menú de navegación en el footer */
+footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Usa flexbox */
+}
+
+footer nav ul li {
+    margin-left: 20px;
+}
+
+footer nav ul li:first-child {
+    margin-left: 0;
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer nav ul li a:hover {
+    color: #ccc;
+}
+
+/* Estilos para la imagen de perfil */
+.profile-image {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin-top: 10px; /* Agrega margen inferior */
+}
+
+/* Estilos para la siguiente sección */
+.next-section {
+    padding: 50px 0; /* Espacio entre esta sección y la siguiente */
+}
