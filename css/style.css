@@ -76,44 +76,6 @@ main {
     margin-bottom: 10px; /* Agrega margen inferior */
 }
 
-/* Estilos para el footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background-color: #333;
-    color: #fff;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    z-index: 100; /* Asegura que esté encima de todo */
-}
-/* Estilos para el menú de navegación en el footer */
-footer nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Usa flexbox */
-}
-
-footer nav ul li {
-    margin-left: 20px;
-}
-
-footer nav ul li:first-child {
-    margin-left: 0;
-}
-
-footer nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer nav ul li a:hover {
-    color: #ccc;
-}
-
 /* Estilos para la imagen de perfil */
 .profile-image {
     width: 200px;
@@ -158,4 +120,71 @@ footer nav ul li a:hover {
 .projects-list li:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
     transition: box-shadow 0.3s ease; /* Agrega una transición suave para la sombra */
+}
+/* Estilos para el footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    z-index: 100; /* Asegura que esté encima de todo */
+}
+
+/* Estilos para el contenedor del footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+    align-items: center; /* Alinea verticalmente los elementos */
+    padding: 0 20px; /* Espacio interno para el contenedor */
+}
+
+/* Estilos para el menú de navegación en el footer */
+footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Usa flexbox */
+}
+
+footer nav ul li {
+    margin-left: 20px;
+}
+
+footer nav ul li:first-child {
+    margin-left: 0;
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer nav ul li a:hover {
+    color: #ccc;
+}
+
+/* Estilos para los datos de contacto */
+.contact-info {
+    display: flex;
+}
+
+.contact-info p {
+    margin-right: 20px; /* Espacio entre los elementos */
+}
+
+.contact-info p:last-child {
+    margin-right: 0; /* Elimina el espacio a la derecha del último elemento */
+}
+.contact-info a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-info a:hover {
+    color: inherit;
 }
