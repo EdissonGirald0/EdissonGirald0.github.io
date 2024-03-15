@@ -163,49 +163,52 @@
             </div>
         </div>
     </main>
-
     <footer class="fixed-bottom footer">
         <!-- Pie de página -->
         <nav class="container">
             <div class="row">
-                <ul class="one-half column">
-
-                    <li class="two columns"><a href="#quien-soy" class="selected">Quién soy</a></li>
-                    <li class="three columns"><a href="#proyectos">Proyectos</a></li>
-                    <li class="two columns"><a href="#portafolio">Portafolio</a></li>
-                    <li class="one columns"><a href="https://www.linkedin.com/in/edisson-giraldo-00586496"
-                            target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                    <li class="one column"><a href="https://github.com/EdissonGirald0" target="_blank"><i
-                                class="fab fa-github"></i></a>
-                    </li>
-                    <li class="one column"><a href="https://wa.me/573025576453" target="_blank"><i
-                                class="fab fa-whatsapp"></i></a>
-                    </li>
-                    <li class="two columns"><button onclick="scrollToTop()" id="goTopButton" title="Ir arriba">
-                            <i class="fas fa-arrow-up"></i>
-                        </button></li>
-
-                </ul>
-                <div class="contact-info one-half column">
-                    <div class="row">
-                        <p><i class="fas fa-map-marker-alt"></i> Dirección: Carrera 1a #18-35, Mosquera(Cundinamarca),
-                            Colombia
-                            🇨🇴 </p>
-                        <p><i class="fas fa-phone"></i> Teléfono: <a href="tel:+573025576453">+57 302 5576453</a></p>
-                        <p><i class="fas fa-envelope"></i> Correo electrónico: <a href="mailto:edisson.giraldo.dev@gmail.com">edisson.giraldo.dev@gmail.com</a></p>
-                        <a href="https://www.linkedin.com/in/edisson-giraldo-00586496" target="_blank"><i
-                                class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
-                        <a href="https://github.com/EdissonGirald0" target="_blank"><i class="fab fa-github"></i>
-                            <span>Github</span></a>
-                        <a href="https://wa.me/573025576453" target="_blank"><i class="fab fa-whatsapp"></i>
-                            <span>WhatsApp</span></a>
+                <div class="footer-links one-half column">
+                    <ul class="footer-nav">
+                        <li><a href="#quien-soy" class="selected">Quién soy</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#portafolio">Portafolio</a></li>
+                    </ul>
+                    <div class="footer-buttons">
+                        <button onclick="scrollToTop()" id="goTopButton" title="Ir arriba">
+                            <i class="fas fa-arrow-up"></i> Ir arriba
+                        </button>
                     </div>
                 </div>
+                <div class="contact-info one-half column">
+                    <div class="row">
+                        <p id="contact-info-toggle">
+                            Dirección:
+                            <a href="https://www.google.com/maps?q=Carrera+1a+%2318-35,+Mosquera,+Cundinamarca,+Colombia" target="_blank">
+                                Carrera 1a #18-35, Mosquera (Cundinamarca), Colombia
+                                <i class="fas fa-map-marker-alt"></i>
+                            </a>
+                            <span id="toggle-icon" class="fas fa-angle-down"></span>
+                        </p>
+                        <div id="contact-info-details" style="display: none;">
+                            <p><i class="fas fa-phone"></i> Teléfono: <a href="tel:+573025576453">+57 302 5576453</a></p>
+                            <p><i class="fas fa-envelope"></i> Correo electrónico: <a href="mailto:edisson.giraldo.dev@gmail.com">edisson.giraldo.dev@gmail.com</a></p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/edisson-giraldo-00586496" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                                <a href="https://github.com/EdissonGirald0" target="_blank"><i class="fab fa-github"></i> Github</a>
+                                <a href="https://wa.me/573025576453" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
             </div>
         </nav>
     </footer>
+    
     <script src="js/scroll.js" defer></script>
     <script src="js/navigation.js" defer></script>
+    <script src="js/acordeonFooter.js" defer></script>
 </body>
 
 </html>
