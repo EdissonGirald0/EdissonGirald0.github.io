@@ -208,7 +208,7 @@ p {
     padding: 1%;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 950px) and (orientation: landscape) {
 
     /* Estilos para modo apaisado en pantallas móviles */
     /* Agrega tus estilos aquí */
