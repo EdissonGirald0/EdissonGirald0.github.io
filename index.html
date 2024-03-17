@@ -8,6 +8,7 @@
     <!-- Enlace al archivo CSS de Skeleton -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/atropos.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -39,7 +40,21 @@
     <main id="mainContent" class="container">
         <div class="row">
             <div id="quien-soy" class="section">
-                <img src="img/fotohojaVD.png" alt="Foto de perfil" class="profile-image">
+                <!-- main Atropos container (required), add your custom class here -->
+                <div class="atropos my-atropos container">
+                    <!-- scale container (required) -->
+                    <div class="atropos-scale">
+                        <!-- rotate container (required) -->
+                        <div class="atropos-rotate">
+                            <!-- inner container (required) -->
+                            <div class="atropos-inner">
+                                <!-- put your custom content here -->
+                                <img src="img/fotohojaVD.png" alt="Foto de perfil" class="profile-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <h2 class="name">Edisson Giraldo</h2>
                 <h7 style="text-align: left;">13/03/2024</h7>
                 <p class="description" style="text-align:left" ;>Soy un ingeniero de software apasionado con más de 6
@@ -223,6 +238,19 @@
     <script src="js/scroll.js" defer></script>
     <script src="js/navigation.js" defer></script>
     <script src="js/acordeonFooter.js" defer></script>
+    <script src="js/atropos.min.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const myAtropos = Atropos({
+                el: '.my-atropos',
+                activeOffset: 30,
+                shadow: true,
+                shadowOffset: 50,
+                shadowScale: 0.65,
+            });
+        });
+    </script>
+    
 </body>
 
 </html>
