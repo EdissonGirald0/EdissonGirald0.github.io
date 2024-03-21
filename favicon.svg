@@ -14,8 +14,30 @@
    id="svg8"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
    sodipodi:docname="favicon.svg">
+  <title
+     id="title1139">Logo    dev Edisson Giraldo</title>
   <defs
-     id="defs2" />
+     id="defs2">
+    <rect
+       x="-278.20169"
+       y="3.9690731"
+       width="121.85597"
+       height="71.894257"
+       id="rect36" />
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1135"
+       x="-0.070110023"
+       width="1.14022"
+       y="-0.031341612"
+       height="1.0626832">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.6684152"
+         id="feGaussianBlur1137" />
+    </filter>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,8 +46,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="400"
-     inkscape:cy="560"
+     inkscape:cx="-128.57143"
+     inkscape:cy="590.17201"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -34,7 +56,8 @@
      inkscape:window-height="836"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="0"
+     inkscape:pagecheckerboard="true" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -43,7 +66,13 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title>Logo    dev Edisson Giraldo</dc:title>
+        <dc:date>21/03/2024</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Edisson Giraldo</dc:title>
+          </cc:Agent>
+        </dc:creator>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -52,26 +81,32 @@
      inkscape:groupmode="layer"
      id="layer1">
     <circle
-       style="fill:#f2f2f2;fill-opacity:0.894118;stroke:#000003;stroke-width:5.66499;stroke-linecap:round;stroke-linejoin:round"
+       style="fill:#ff6600;fill-opacity:0.894118;stroke:#000003;stroke-width:1.49406;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter1135)"
        id="path10"
        sodipodi:type="arc"
-       sodipodi:cx="97.743759"
-       sodipodi:cy="138.52275"
-       sodipodi:rx="95.089806"
-       sodipodi:ry="106.13097"
+       sodipodi:cx="98.869255"
+       sodipodi:cy="147.1599"
+       sodipodi:rx="62.760551"
+       sodipodi:ry="140.45538"
        sodipodi:start="2.6119725"
        sodipodi:end="2.6080136"
        sodipodi:arc-type="slice"
-       d="M 15.681349,192.14071 A 95.089806,106.13097 0 0 1 49.622664,46.984942 95.089806,106.13097 0 0 1 179.71092,84.723601 95.089806,106.13097 0 0 1 146.0271,229.95407 95.089806,106.13097 0 0 1 15.872177,192.50288 l 81.871582,-53.98013 z" />
+       d="M 44.70696,218.11874 A 62.760551,140.45538 0 0 1 67.108685,26.017326 62.760551,140.45538 0 0 1 152.96868,75.961259 62.760551,140.45538 0 0 1 130.73691,268.16153 62.760551,140.45538 0 0 1 44.832909,218.59805 L 98.869255,147.1599 Z"
+       transform="matrix(1,0,0.01216071,0.89841877,0,18.876861)" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.8px;line-height:1.25;font-family:'Noto Sans Old Turkic';-inkscape-font-specification:'Noto Sans Old Turkic';white-space:pre;inline-size:68.5957;stroke-width:0.264583"
        x="-91.379707"
        y="138.2874"
        id="text14"
-       transform="matrix(5.2670344,0,0,4.2132681,461.1007,-291.27088)"><tspan
-         x="-91.379707"
-         y="138.2874"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.8px;font-family:'Noto Sans Tifinagh Azawagh';-inkscape-font-specification:'Noto Sans Tifinagh Azawagh';baseline-shift:super;stroke-width:0.264583">EI</tspan></tspan></text>
+       transform="matrix(5.2670344,0,0,4.2132681,461.1007,-291.27088)" />
+    <text
+       xml:space="preserve"
+       id="text34"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.8px;line-height:1.25;font-family:C059;-inkscape-font-specification:C059;white-space:pre;shape-inside:url(#rect36);opacity:1;"
+       transform="matrix(1.541734,0,0,6.5228308,449.37646,-40.605888)"><tspan
+         x="-278.20117"
+         y="47.758349"><tspan
+           style="shape-inside:url(#rect36);opacity:1">DEV</tspan></tspan></text>
   </g>
 </svg>
