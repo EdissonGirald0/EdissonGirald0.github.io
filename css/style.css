@@ -24,6 +24,10 @@ main {
     content: center;
 }
 
+.texto1 {
+    text-align: left;
+}
+
 /* Estilos para el último elemento */
 #portafolio {
     margin-bottom: 100px;
