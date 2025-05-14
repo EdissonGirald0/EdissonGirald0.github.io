@@ -5,11 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Portafolio profesional de Edisson Giraldo. Desarrollo web, análisis de datos e inteligencia Artificial">
-    <meta name="keywords" content="portafolio, desarrollo web, análisis de datos, proyectos">
+        content="Portafolio profesional de Edisson Giraldo. Ingeniero de Software especializado en desarrollo web full-stack, análisis de datos e inteligencia artificial.">
+    <meta name="keywords" content="portafolio, ingeniero de software, desarrollo web, full-stack, MEAN stack, análisis de datos, ciencia de datos, inteligencia artificial, machine learning, proyectos, Edisson Giraldo">
     <meta name="author" content="Edisson Giraldo">
 
-    <title>Portafolio de Edisson Giraldo - Desarrollo Web</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://edissongirald0.github.io/">
+    <meta property="og:title" content="Portafolio de Edisson Giraldo - Ingeniero de Software">
+    <meta property="og:description" content="Portafolio profesional de Edisson Giraldo. Ingeniero de Software especializado en desarrollo web full-stack, análisis de datos e inteligencia artificial.">
+    <meta property="og:image" content="https://edissongirald0.github.io/img/fotohojaVD.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://edissongirald0.github.io/">
+    <meta property="twitter:title" content="Portafolio de Edisson Giraldo - Ingeniero de Software">
+    <meta property="twitter:description" content="Portafolio profesional de Edisson Giraldo. Ingeniero de Software especializado en desarrollo web full-stack, análisis de datos e inteligencia artificial.">
+    <meta property="twitter:image" content="https://edissongirald0.github.io/img/fotohojaVD.png">
+
+    <title>Portafolio de Edisson Giraldo - Ingeniero de Software</title>
     <link rel="icon" href="favicon.svg" type="image/x-icon">
     <!-- Enlace al archivo CSS de Skeleton -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
@@ -25,18 +39,21 @@
     }
     
     function handleOrientationChange() {
-      if (isMobile()) {
+      const pageHeader = document.getElementById("pageHeader");
+      const mainContent = document.getElementById("mainContent");
+
+      if (isMobile() && pageHeader) {
         if (window.matchMedia("(orientation: portrait)").matches) {
-          // La orientación es vertical
-          // Aquí puedes ocultar el header y el footer, por ejemplo:
-          document.getElementById("header").style.display = "none";
-          document.getElementById("footer").style.display = "none";
+          pageHeader.style.display = "none";
         } else {
-          // La orientación es horizontal
-          // Aquí puedes mostrar el header y el footer
-          document.getElementById("header").style.display = "fixed-top";
-          document.getElementById("footer").style.display = "fixed-bottom footer";
+          pageHeader.style.display = "flex";
         }
+      } else if (pageHeader) {
+        pageHeader.style.display = "flex";
+      }
+      
+      if (typeof window.adjustMainContentPaddingGlobal === 'function') {
+        window.adjustMainContentPaddingGlobal();
       }
     }
     
@@ -46,10 +63,20 @@
     // Ejecuta la función al cargar la página para configurar la visibilidad inicial
     handleOrientationChange();
     </script>
-    <header class="fixed-top">
-        <h1>Edisson Giraldo</h1>
-        <h2>Ingeniero de Software</h2>
-        <nav>
+    <header class="fixed-top" id="pageHeader">
+        <div class="header-title-group">
+            <h1>Edisson Giraldo</h1>
+            <h2>Ingeniero de Software</h2>
+        </div>
+        <div class="header-controls">
+            <button id="theme-toggle-button" aria-label="Toggle theme">
+                <i class="fas fa-sun"></i> <!-- Icono inicial (sol para tema oscuro por defecto) -->
+            </button>
+            <button id="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <nav id="main-nav">
             <ul>
                 <li><a href="#quien-soy" class="selected">Quién soy</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
@@ -88,7 +115,7 @@
                 </div>
 
                 <h2 class="name">Edisson Giraldo</h2>
-                <h7 style="text-align: left;">13/03/2024</h7>
+                <p class="date" style="text-align: left;">13/03/2024</p>
                 <div class="texto1">
                     <p class="description" style="text-align: left;">
                         Soy un ingeniero de software apasionado con más de 6 años de experiencia en desarrollo web
@@ -192,16 +219,28 @@
                             <li>Diseño modular y reproducible para facilitar su comprensión y escalabilidad.</li>
                             <li>Código completamente documentado y alineado con las mejores prácticas.</li>
                         </ul>
+                        
+                        <h4>Tecnologías Utilizadas</h4>
+                        <ul class="technologies-list">
+                            <li>Python</li>
+                            <li>Pandas</li>
+                            <li>Scikit-learn</li>
+                            <li>Matplotlib</li>
+                            <li>Jupyter Notebook</li>
+                        </ul>
+
                         <p>
                             Si tienes sugerencias o encuentras algo que pueda mejorarse, no dudes en abrir un
                             <em>issue</em> o contribuir al proyecto.
                         </p>
-                        <p>
-                            <strong>Autor:</strong> <a href="https://github.com/EdissonGirald0">Edisson Giraldo</a><br>
-                            <strong>Repositorio:</strong> <a
-                                href="https://github.com/EdissonGirald0/Applied-Data-Science-Capstone">Applied Data
-                                Science Capstone</a>
-                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/EdissonGirald0/Applied-Data-Science-Capstone" class="btn btn-project-repo" target="_blank">
+                                <i class="fab fa-github"></i> Repositorio
+                            </a>
+                            <a href="https://github.com/EdissonGirald0" class="btn btn-project-author" target="_blank">
+                                <i class="fas fa-user"></i> Autor: Edisson Giraldo
+                            </a>
+                        </div>
                     </li>
                     <li>
                         <h3>Reconocimiento Facial</h3>
@@ -234,14 +273,12 @@
                         </ul>
 
                         <h4>Tecnologías Utilizadas</h4>
-                        <ul>
-                            <li><strong>Python:</strong> Lenguaje principal para el desarrollo del proyecto.</li>
-                            <li><strong>OpenCV:</strong> Biblioteca para procesamiento de imágenes y videos.</li>
-                            <li><strong>Dlib:</strong> Herramienta para detección y alineación de rostros.</li>
-                            <li><strong>TensorFlow / PyTorch:</strong> Implementación de modelos de aprendizaje profundo
-                                para reconocimiento facial.</li>
-                            <li><strong>Flask:</strong> Para construir una API que permita integrar el sistema en
-                                diferentes aplicaciones.</li>
+                        <ul class="technologies-list">
+                            <li>Python</li>
+                            <li>OpenCV</li>
+                            <li>Dlib</li>
+                            <li>TensorFlow / PyTorch</li>
+                            <li>Flask</li>
                         </ul>
 
                         <h4>Casos de Uso</h4>
@@ -260,12 +297,14 @@
                         </p>
 
                         <h4>Enlaces Relacionados</h4>
-                        <p>
-                            <strong>Repositorio:</strong> <a
-                                href="https://github.com/EdissonGirald0/reconocimiento-Facia-">Reconocimiento Facial en
-                                GitHub</a><br>
-                            <strong>Autor:</strong> <a href="https://github.com/EdissonGirald0">Edisson Giraldo</a>
-                        </p>
+                        <div class="project-links">
+                             <a href="https://github.com/EdissonGirald0/reconocimiento-Facia-" class="btn btn-project-repo" target="_blank">
+                                <i class="fab fa-github"></i> Repositorio
+                            </a>
+                            <a href="https://github.com/EdissonGirald0" class="btn btn-project-author" target="_blank">
+                                <i class="fas fa-user"></i> Autor: Edisson Giraldo
+                            </a>
+                        </div>
 
                         <p>
                             Proyecto desarrollado para explorar y aplicar técnicas avanzadas de visión por
@@ -277,13 +316,9 @@
                     <li>
                         <h3>ClimaIA</h3>
                         <p>
-                            <strong>ClimaIA</strong> es un proyecto enfocado en el uso de inteligencia artificial para
-                            realizar predicciones climáticas precisas y accesibles. Este sistema combina algoritmos
-                            avanzados
-                            de aprendizaje automático con análisis de datos meteorológicos para ofrecer una herramienta
-                            innovadora
-                            que beneficia a comunidades y empresas en la planificación y toma de decisiones basadas en
-                            el clima.
+                            Proyecto de análisis climático que utiliza inteligencia artificial para realizar predicciones precisas y accesibles. 
+                            Este sistema combina algoritmos avanzados de aprendizaje automático con datos meteorológicos para ofrecer una herramienta 
+                            innovadora, beneficiando a comunidades y empresas en la planificación y toma de decisiones basadas en el clima.
                         </p>
 
                         <h4>Características del Proyecto</h4>
@@ -307,14 +342,13 @@
                         </ul>
 
                         <h4>Tecnologías Utilizadas</h4>
-                        <ul>
-                            <li><strong>Python:</strong> Lenguaje principal para el desarrollo.</li>
-                            <li><strong>Pandas y NumPy:</strong> Para el procesamiento y análisis de datos.</li>
-                            <li><strong>TensorFlow / Scikit-learn:</strong> Para la implementación de modelos de
-                                aprendizaje automático.</li>
-                            <li><strong>Matplotlib y Seaborn:</strong> Para visualización de datos.</li>
-                            <li><strong>APIs Climáticas:</strong> Integración de fuentes confiables de datos
-                                meteorológicos.</li>
+                        <ul class="technologies-list">
+                            <li>Python</li>
+                            <li>Pandas y NumPy</li>
+                            <li>TensorFlow / Scikit-learn</li>
+                            <li>Matplotlib y Seaborn</li>
+                            <li>APIs Climáticas</li>
+                            <li>Jupyter Notebook</li>
                         </ul>
 
                         <h4>¿Cómo Contribuir?</h4>
@@ -326,11 +360,14 @@
                         </p>
 
                         <h4>Enlaces Relacionados</h4>
-                        <p>
-                            <strong>Repositorio:</strong> <a href="https://github.com/Resuelve-IA/climaIa">ClimaIA en
-                                GitHub</a><br>
-                            <strong>Autor:</strong> <a href="https://github.com/Resuelve-IA">Resuelve IA</a>
-                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/Resuelve-IA/climaIa" class="btn btn-project-repo" target="_blank">
+                                <i class="fab fa-github"></i> Repositorio
+                            </a>
+                            <a href="https://github.com/Resuelve-IA" class="btn btn-project-author" target="_blank">
+                                <i class="fas fa-user"></i> Autor: Resuelve IA
+                            </a>
+                        </div>
                         <p>
                             Proyecto desarrollado con pasión por la ciencia de datos y la inteligencia artificial
                             para mejorar nuestra relación con el medio ambiente.
@@ -422,61 +459,72 @@
         </div>
     </main>
     <footer class="fixed-bottom footer">
-        <!-- Pie de página -->
-        <nav class="container">
-            <div class="row">
-                <div class="footer-links one-half column">
-                    <ul class="footer-nav">
-                        <li><a href="#quien-soy" class="selected">Quién soy</a></li>
-                        <li><a href="#proyectos">Proyectos</a></li>
-                        <li><a href="#portafolio">Portafolio</a></li>
-                        <li><a href="img/Hoja de vida adtualizada2024.pdf" download="EdissonGirald0.pdf" class="btn">
-                                <i class="fas fa-download"></i> Descargar CV
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="footer-buttons">
-                        <button onclick="scrollToTop()" id="goTopButton" title="Ir arriba">
-                            <i class="fas fa-arrow-up"></i> Ir arriba
-                        </button>
-                    </div>
+        <div class="container">
+            <div class="footer-icon-bar row">
+                <!-- Icono para Navegación del Footer -->
+                <div class="footer-icon-item column">
+                    <button id="footer-nav-toggle" aria-label="Toggle footer navigation">
+                        <i class="fas fa-list-ul"></i> <!-- Icono de lista/menú -->
+                    </button>
                 </div>
-                <div class="contact-info one-half column">
-                    <div class="row">
-                        <p id="contact-info-toggle">
-                            Dirección:
-                            <a href="https://www.google.com/maps?q=Carrera+1a+%2318-35,+Mosquera,+Cundinamarca,+Colombia"
-                                target="_blank">
-                                Carrera 1a #18-35, Mosquera (Cundinamarca), Colombia
-                                <i class="fas fa-map-marker-alt"></i>
-                            </a>
-                            <span id="toggle-icon" class="fas fa-angle-down"></span>
-                        </p>
-                        <div id="contact-info-details" style="display: none;">
-                            <p><i class="fas fa-phone"></i> Teléfono: <a href="tel:+573025576453">+57 302 5576453</a>
-                            </p>
-                            <p><i class="fas fa-envelope"></i> Correo electrónico: <a
-                                    href="mailto:edisson.giraldo.dev@gmail.com">edisson.giraldo.dev@gmail.com</a></p>
-                            <div class="social-links">
-                                <a href="https://www.linkedin.com/in/edisson-giraldo-00586496" target="_blank"><i
-                                        class="fab fa-linkedin"></i> LinkedIn</a>
-                                <a href="https://github.com/EdissonGirald0" target="_blank"><i
-                                        class="fab fa-github"></i> Github</a>
-                                <a href="https://wa.me/573025576453" target="_blank"><i class="fab fa-whatsapp"></i>
-                                    WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Icono para Información de Contacto -->
+                <div class="footer-icon-item column">
+                    <button id="footer-contact-toggle" aria-label="Toggle contact information">
+                        <i class="fas fa-info-circle"></i> <!-- Icono de información -->
+                    </button>
                 </div>
-
-
+                <!-- Botón Ir Arriba (mantenido o podría ser un icono también) -->
+                <div class="footer-icon-item column">
+                    <button onclick="scrollToTop()" id="goTopButton" title="Ir arriba">
+                        <i class="fas fa-arrow-up"></i> Ir arriba
+                    </button>
+                </div>
             </div>
-        </nav>
+
+            <!-- Contenido desplegable para Navegación del Footer -->
+            <div id="footer-nav-content" class="footer-collapsible-content" style="display: none;">
+                <ul class="footer-nav">
+                    <li><a href="#quien-soy" class="selected">Quién soy</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="img/Hoja de vida adtualizada2024.pdf" download="EdissonGirald0.pdf" class="btn">
+                            <i class="fas fa-download"></i> Descargar CV
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contenido desplegable para Información de Contacto -->
+            <div id="footer-contact-content" class="footer-collapsible-content" style="display: none;">
+                <p>
+                    Dirección:
+                    <a href="https://www.google.com/maps?q=Carrera+1a+%2318-35,+Mosquera,+Cundinamarca,+Colombia"
+                        target="_blank">
+                        Carrera 1a #18-35, Mosquera (Cundinamarca), Colombia
+                        <i class="fas fa-map-marker-alt"></i>
+                    </a>
+                </p>
+                <p><i class="fas fa-phone"></i> Teléfono: <a href="tel:+573025576453">+57 302 5576453</a></p>
+                <p><i class="fas fa-envelope"></i> Correo electrónico: <a
+                        href="mailto:edisson.giraldo.dev@gmail.com">edisson.giraldo.dev@gmail.com</a></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/edisson-giraldo-00586496" target="_blank"><i
+                            class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/EdissonGirald0" target="_blank"><i
+                            class="fab fa-github"></i> Github</a>
+                    <a href="https://wa.me/573025576453" target="_blank"><i class="fab fa-whatsapp"></i>
+                        WhatsApp</a>
+                </div>
+            </div>
+        </div>
     </footer>
     <script src="js/scroll.js" defer></script>
     <script src="js/navigation.js" defer></script>
     <script src="js/acordeonFooter.js" defer></script>
     <script src="js/atropos.min.js" defer></script>
+    <script src="js/layoutAdjust.js" defer></script>
+    <script src="js/headerNavigation.js" defer></script>
+    <script src="js/themeSwitcher.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const myAtropos = Atropos({

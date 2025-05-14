@@ -1,32 +1,436 @@
+:root {
+    /* Tema Oscuro (Por defecto) */
+    --bg-color: #1a1e24;
+    --medium-bg-color: #242930;
+    --text-color: #e0e0e0;
+    --accent-color: #00f7ff; /* Cian brillante */
+    --accent-hover-color: #00c5cc;
+    --subtle-border-color: #3a3f47;
+    --card-shadow-color: rgba(0, 247, 255, 0.1);
+    --card-shadow-hover-color: rgba(0, 247, 255, 0.15);
+    --btn-text-color: #1a1e24; /* Texto oscuro para botones con fondo de acento */
+    --scrollbar-thumb-color: #00f7ff;
+    --scrollbar-track-color: #1a1e24;
+}
+
+.light-theme {
+    /* Tema Claro */
+    --bg-color: #f4f6f8;                     /* Gris muy claro */
+    --medium-bg-color: #ffffff;              /* Blanco puro */
+    --text-color: #212529;                   /* Negro suave */
+    --accent-color: #007bff;                 /* Azul estándar */
+    --accent-hover-color: #0056b3;           /* Azul más oscuro */
+    --subtle-border-color: #ced4da;          /* Gris claro para bordes */
+    --card-shadow-color: rgba(0, 0, 0, 0.1);
+    --card-shadow-hover-color: rgba(0, 0, 0, 0.15);
+    --btn-text-color: #ffffff; /* Texto claro para botones con fondo de acento azul */
+    --scrollbar-thumb-color: #007bff;
+    --scrollbar-track-color: #f4f6f8;
+}
+
 /* Estilos para el cuerpo de la página */
 body {
     margin: 0;
     padding: 0;
-    background-color: #ebebeb;
-}
-/* ---- stats.js ---- */
-header {
-    display: none;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Estilos para el main */
-main {
-    top: 0px;
-    margin-top: 0px;
-    /* Ajusta el espacio para el header */
-    min-height: calc(100vh);
-    /* Resta el tamaño del header y footer */
-    padding-top: 60px;
-    /* Ajusta el espacio para el header */
-    padding-bottom: 300px;
-    /* Ajusta el espacio para el footer */
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--medium-bg-color);
+    color: var(--text-color);
+    width: 100%;
+    padding: 10px 20px;
+    text-align: left;
+    z-index: 100;
     box-sizing: border-box;
-    content: center;
+    border-bottom: 1px solid var(--subtle-border-color);
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.header-title-group {
+    /* No se necesita mucho aquí si el header es flex y space-between */
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+}
+
+#theme-toggle-button {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1.5em; /* Similar al botón de menú */
+    cursor: pointer;
+    margin-right: 15px; /* Espacio entre el botón de tema y el de menú */
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+#theme-toggle-button:hover {
+    color: var(--accent-hover-color);
+}
+
+header h1 {
+    font-size: 1.5em;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+header h2 {
+    font-size: 1em;
+    font-weight: normal;
+    color: var(--text-color); /* Ajustado para usar text-color general del tema */
+    transition: color 0.3s ease;
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1.8em;
+    cursor: pointer;
+    display: none; 
+    transition: color 0.3s ease;
+}
+
+#menu-toggle:hover {
+    color: var(--accent-hover-color);
+}
+
+/* Nav Principal */
+#main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: var(--medium-bg-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra más genérica, podría ajustarse por tema */
+    z-index: 99;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+    transition: width 0.3s ease, left 0.3s ease, transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    border-right: 1px solid var(--subtle-border-color);
+    border-bottom: 1px solid var(--subtle-border-color);
+}
+
+#main-nav.nav-visible {
+    display: block;
+    width: 100%;
+    left: 0;
+    transform: translateX(0%);
+}
+
+#main-nav ul li {
+    display: block;
+    margin-left: 0;
+    border-bottom: 1px solid var(--subtle-border-color);
+    transition: border-bottom-color 0.3s ease;
+}
+
+#main-nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#main-nav ul li a:hover,
+#main-nav ul li a.selected {
+    background-color: var(--accent-color);
+    color: var(--btn-text-color); /* Usar variable para texto de botón */
+}
+
+/* Main */
+main {
+    padding-top: 10px;
+    padding-bottom: 70px;
+    box-sizing: border-box;
+    min-height: calc(100vh);
 }
 
 .texto1 {
     text-align: left;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
+
+.section h2 {
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+}
+
+.section h6 {
+    margin-right: 100%;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.name {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+/* Tarjetas */
+.portfolio-offer, .projects-list li {
+    border: 1px solid var(--subtle-border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px var(--card-shadow-color);
+    background-color: var(--medium-bg-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.portfolio-offer:hover, .projects-list li:hover {
+    box-shadow: 0 6px 15px var(--card-shadow-hover-color);
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.portfolio-offer h3, .projects-list li h3 {
+    color: var(--accent-color);
+    margin-top: 0;
+    transition: color 0.3s ease;
+    margin-bottom: 15px; /* Espacio después del título del proyecto */
+}
+
+/* Estilos para la lista de tecnologías */
+.technologies-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap; /* Para que las píldoras pasen a la siguiente línea si no caben */
+    justify-content: flex-start; /* Alinear al inicio por defecto */
+}
+
+.technologies-list li {
+    background-color: var(--accent-color);
+    color: var(--btn-text-color); /* Usar el color de texto de botón para contraste */
+    padding: 5px 12px;
+    border-radius: 15px; /* Píldoras redondeadas */
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-size: 0.85em;
+    font-weight: bold;
+    /* Resetear estilos de .projects-list li si es necesario */
+    border: none; 
+    box-shadow: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.technologies-list li:hover {
+    background-color: var(--accent-hover-color);
+    /* Resetear transform de .projects-list li:hover si aplica */
+    transform: none;
+}
+
+/* Estilos para los enlaces de proyectos */
+.project-links {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Para que los botones se ajusten en pantallas pequeñas */
+    gap: 15px; /* Espacio entre botones */
+}
+
+.btn-project-repo, .btn-project-author {
+    /* Heredan estilos de .btn */
+    /* Se pueden añadir más especificidad si es necesario */
+    padding: 8px 15px; /* Un poco más pequeños que los .btn genéricos */
+    font-size: 0.9em;
+    display: inline-flex; /* Para alinear icono y texto */
+    align-items: center;
+}
+
+.btn-project-repo i, .btn-project-author i {
+    margin-right: 8px; /* Espacio entre icono y texto */
+}
+
+/* Ajuste para que los botones de proyecto no hereden el transform de la tarjeta */
+.projects-list li .btn:hover {
+    transform: translateY(-2px); /* Mantener el transform del botón */
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    color: var(--text-color);
+    width: 100%;
+    padding-top: 0;
+    z-index: 100;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.footer-icon-bar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: var(--medium-bg-color);
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1); /* Sombra genérica */
+    border-top: 1px solid var(--subtle-border-color);
+    border-left: 1px solid var(--subtle-border-color);
+    border-right: 1px solid var(--subtle-border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-icon-bar button {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1.3em;
+    cursor: pointer;
+    padding: 8px;
+    transition: color 0.2s ease;
+}
+
+.footer-icon-bar button:hover {
+    color: var(--accent-hover-color);
+}
+
+.footer-collapsible-content {
+    background-color: var(--medium-bg-color);
+    border-top: 1px solid var(--subtle-border-color);
+    padding: 20px;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.15); /* Sombra genérica */
+    text-align: left;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-collapsible-content ul.footer-nav li {
+    border-bottom: 1px solid var(--subtle-border-color);
+    transition: border-bottom-color 0.3s ease;
+}
+
+.footer-collapsible-content ul.footer-nav li a,
+.footer-collapsible-content .social-links a {
+    color: var(--text-color);
+    transition: color 0.2s ease;
+}
+
+.footer-collapsible-content ul.footer-nav li a:hover,
+.footer-collapsible-content .social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Textos y Enlaces Generales */
+p {
+    text-align: left;
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover-color);
+    text-decoration: underline;
+}
+
+/* Botones */
+.btn {
+    background-color: var(--accent-color);
+    color: var(--btn-text-color) !important;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover-color);
+    color: var(--btn-text-color) !important;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+    border-radius: 5px;
+    border: 2px solid var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover-color); /* Usar accent-hover para consistencia */
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
+
+/* Media Queries - asegurar que los colores se hereden o se especifiquen si es necesario */
+@media (min-width: 750px) and (max-width: 999px) {
+    #main-nav.nav-visible {
+        width: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 280px;
+        background-color: var(--medium-bg-color); 
+        border-right: 1px solid var(--subtle-border-color); /* Asegurar borde con variable */
+        border-bottom: 1px solid var(--subtle-border-color);/* Asegurar borde con variable */
+    }
+
+    /* Reforzar estilos de los elementos internos del nav para este rango específico */
+    #main-nav.nav-visible ul li {
+        border-bottom-color: var(--subtle-border-color);
+    }
+
+    #main-nav.nav-visible ul li a {
+        color: var(--text-color);
+    }
+
+    #main-nav.nav-visible ul li a:hover,
+    #main-nav.nav-visible ul li a.selected {
+        background-color: var(--accent-color);
+        color: var(--btn-text-color);
+    }
+}
+
+/* El resto de los media queries no necesitan cambios específicos de color si todo usa variables */
 
 /* Estilos para el último elemento */
 #portafolio {
@@ -37,10 +441,17 @@ main {
 /* Estilos para la sección */
 .section {
     text-align: center;
+    padding: 20px 0; /* Añadir padding a las secciones */
+}
+
+.section h2 {
+    color: var(--accent-color);
+    margin-bottom: 30px;
 }
 
 .section h6 {
     margin-right: 100%;
+    color: var(--text-color);
 }
 
 /* Estilos para la imagen de perfil */
@@ -53,26 +464,17 @@ main {
     margin-top: 10px;
 }
 
-/* Estilos para el nombre */
-.name {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    /* Agrega margen inferior */
-}
-
 .my-atropos {
     width: 200px;
     height: auto;
     border-radius: 50%;
     margin-bottom: 10px;
     margin-top: 10px;
-    /* Agrega margen inferior */
-    display: flex;
-    /* Usa flexbox para centrar */
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: center;
-    /* Centra verticalmente */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    /* Considerar un borde o sombra sutil si es necesario */
+    /* border: 2px solid var(--accent-color); */
 }
 
 /* Estilos para la siguiente sección */
@@ -82,55 +484,50 @@ main {
 }
 
 .portfolio-offer {
-    border: 2px solid #ccc;
-    /* Agrega un borde sólido de color gris */
-    border-radius: 5px;
-    /* Agrega esquinas redondeadas */
-    padding: 20px;
-    /* Agrega relleno interno para separar el contenido del borde */
-    margin-bottom: 20px;
-    /* Agrega margen inferior para separar las tarjetas */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Agrega una sombra suave */
-    background-color: #fff;
-    /* Agrega un color de fondo blanco */
+    border: 1px solid var(--subtle-border-color);
+    border-radius: 8px; /* Bordes ligeramente más redondeados */
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px var(--card-shadow-color);
+    background-color: var(--medium-bg-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Estilos adicionales para resaltar las tarjetas al pasar el ratón */
 .portfolio-offer:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Aumenta la sombra al pasar el ratón */
-    transition: box-shadow 0.3s ease;
-    /* Agrega una transición suave para la sombra */
+    box-shadow: 0 6px 15px var(--card-shadow-hover-color);
+    border-color: var(--accent-color);
+    transform: translateY(-5px); /* Elevar tarjeta al pasar el mouse */
+}
+
+.portfolio-offer h3 {
+    color: var(--accent-color);
+    margin-top: 0;
 }
 
 .projects-list {
-    list-style: none;
-    /* Quita los estilos de lista por defecto */
-    padding: 0;
-    /* Elimina el relleno interno de la lista */
+    list-style: none; 
+    padding: 0; 
 }
 
 .projects-list li {
-    border: 2px solid #ccc;
-    /* Agrega un borde sólido de color gris */
-    border-radius: 5px;
-    /* Agrega esquinas redondeadas */
-    padding: 20px;
-    /* Agrega relleno interno para separar el contenido del borde */
-    margin-bottom: 20px;
-    /* Agrega margen inferior para separar los elementos de la lista */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Agrega una sombra suave */
-    background-color: #fff;
-    /* Agrega un color de fondo blanco */
+    border: 1px solid var(--subtle-border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px var(--card-shadow-color);
+    background-color: var(--medium-bg-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .projects-list li:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Aumenta la sombra al pasar el ratón */
-    transition: box-shadow 0.3s ease;
-    /* Agrega una transición suave para la sombra */
+    box-shadow: 0 6px 15px var(--card-shadow-hover-color);
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.projects-list li h3 {
+    color: var(--accent-color);
+    margin-top: 0;
 }
 
 /* Estilos para el footer */
@@ -138,42 +535,97 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: #333;
-    color: #fff;
+    background-color: transparent; 
+    color: var(--text-color); /* Color de texto base para el footer */
     width: 100%;
-    padding-top: 1%;
-    margin-top: 20px;
-    /* Nuevo: Agrega un margen superior */
+    padding-top: 0; 
     z-index: 100;
-    /* Asegura que esté encima de todo */
+    text-align: center; 
 }
 
-/* Estilos para el menú de navegación en el footer */
-footer nav ul {
+.footer-icon-bar {
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 8px 15px; /* Aumentar padding para mejor tacto */
+    background-color: var(--medium-bg-color); 
+    border-radius: 15px 15px 0 0; /* Bordes más redondeados */
+    box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--subtle-border-color);
+    border-left: 1px solid var(--subtle-border-color);
+    border-right: 1px solid var(--subtle-border-color);
+}
+
+.footer-icon-bar .footer-icon-item {
+    margin: 0 12px; 
+}
+
+.footer-icon-bar button {
+    background: none;
+    border: none;
+    color: var(--accent-color); /* Iconos con color de acento */
+    font-size: 1.3em; 
+    cursor: pointer;
+    padding: 8px;
+    transition: color 0.2s ease;
+}
+
+.footer-icon-bar button:hover {
+    color: var(--accent-hover-color); 
+}
+
+/* Estilos para el contenido desplegable del footer */
+.footer-collapsible-content {
+    background-color: var(--medium-bg-color);
+    border-top: 1px solid var(--subtle-border-color);
+    padding: 20px;
+    position: absolute;
+    bottom: 100%; 
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.15);
+    text-align: left; 
+    color: var(--text-color);
+}
+
+.footer-collapsible-content ul.footer-nav {
     list-style: none;
-    margin: 0;
     padding: 0;
-    display: flex;
-    /* Usa flexbox */
+    margin: 0;
+    display: block; 
 }
 
-footer nav ul li {
-    margin-right: 10px;
-    /* Nuevo: Agrega espacio entre los elementos */
+.footer-collapsible-content ul.footer-nav li {
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--subtle-border-color);
 }
 
-footer nav ul li:first-child {
-    margin-left: 0;
+.footer-collapsible-content ul.footer-nav li:last-child {
+    border-bottom: none;
 }
 
-footer nav ul li a {
-    color: #fff;
+.footer-collapsible-content ul.footer-nav li a {
     text-decoration: none;
-    font-weight: bold;
+    color: var(--text-color);
+    font-weight: normal;
+    transition: color 0.2s ease;
 }
 
-footer nav ul li a:hover {
-    color: #ccc;
+.footer-collapsible-content ul.footer-nav li a:hover {
+    color: var(--accent-color);
+}
+
+.footer-collapsible-content .social-links a {
+    margin-right: 15px;
+    color: var(--text-color);
+    font-size: 1.2em; /* Un poco más grandes los iconos sociales */
+    transition: color 0.2s ease;
+}
+
+.footer-collapsible-content .social-links a:hover {
+    color: var(--accent-color);
 }
 
 /* Estilos para los datos de contacto */
@@ -201,10 +653,6 @@ footer nav ul li a:hover {
     color: inherit;
 }
 
-p {
-    text-align: left;
-}
-
 #quien-soy h1 {
     display: none;
 }
@@ -226,24 +674,24 @@ p {
     body {
         margin: 0;
         padding: 0;
-        background-color: #EBEDEF;
+        background-color: var(--bg-color); /* CORREGIDO: Usar variable de tema */
     }
 
     header {
-        display: none;
+        display: flex;
+    }
+
+    #menu-toggle { /* Asegurar que el botón de menú sea visible en landscape móvil */
+        display: block;
     }
 
     /* Estilos para el main */
     main {
-        top: 0px;
-        margin-top: 0px;
-        /* Ajusta el espacio para el header */
+        /* top: 0px; */ /* Redundante */
+        /* margin-top: 0px; */ /* Redundante */
         min-height: calc(100vh);
-        /* Resta el tamaño del header y footer */
-        padding-top: 60px;
-        /* Ajusta el espacio para el header */
-        padding-bottom: 300px;
-        /* Ajusta el espacio para el footer */
+        padding-top: 68px; /* Consistente con header fijo */
+        padding-bottom: 60px; /* Consistente con footer fijo */
         box-sizing: border-box;
     }
 
@@ -431,10 +879,18 @@ p {
     .social-links {
         padding: 1%;
     }
+
+    #menu-toggle {
+        display: block;
+    }
 }
 
 /* Larger than mobile */
-@media (min-width: 400px) {}
+@media (min-width: 400px) {
+    #menu-toggle { /* Mostrar botón de menú en pantallas pequeñas portrait también */
+        display: block;
+    }
+}
 
 /* Larger than phablet */
 @media (min-width: 550px) {}
@@ -444,59 +900,48 @@ p {
 
     /* Estilos para el header */
     header {
+        display: flex;
+    }
+
+    #menu-toggle {
         display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #333;
-        color: #fff;
-        width: 100%;
-        padding: 20px;
-        text-align: center;
-        z-index: 100;
-        /* Asegura que esté encima de todo */
-    }
-
-    header nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-
-    header nav ul li {
-        display: inline-block;
-        margin-left: 20px;
-    }
-
-    header nav ul li:first-child {
-        margin-left: 0;
-    }
-
-    header nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    header nav ul li a:hover {
-        color: #ccc;
     }
 
     /* Estilos para el main */
     main {
-        top: 120px;
-        margin-top: 100px;
-        /* Ajusta el espacio para el header */
-        min-height: calc(100vh - 300px);
-        /* Resta el tamaño del header y footer */
-        padding-top: 60px;
-        /* Ajusta el espacio para el header */
-        padding-bottom: 120px;
-        /* Ajusta el espacio para el footer */
+        /* top: 120px; */ /* Quitado */
+        /* margin-top: 100px; */ /* Quitado */
+        min-height: calc(100vh); /* Ajustado */
+        padding-top: 68px;    /* Consistente con header fijo */
+        padding-bottom: 60px; /* Consistente con footer fijo */
         box-sizing: border-box;
     }
+}
 
+/* Estilos de #main-nav.nav-visible para pantallas medianas */
+@media (min-width: 750px) and (max-width: 999px) {
+    #main-nav.nav-visible {
+        width: 30%;
+        left: 50%;
+        transform: translateX(-50%); /* Centrar el nav */
+        min-width: 280px; /* Para asegurar legibilidad */
+        background-color: var(--medium-bg-color); /* Reforzar el color de fondo */
+        /* Los colores del texto y enlaces internos deberían heredarse correctamente */
+        /* Si los enlaces no toman el color, se podría añadir: */
+        /* #main-nav.nav-visible ul li a { color: var(--text-color); } */
+        /* #main-nav.nav-visible ul li a:hover, */
+        /* #main-nav.nav-visible ul li a.selected { background-color: var(--accent-color); color: var(--btn-text-color); } */
+    }
+}
+
+/* Estilos de #main-nav.nav-visible para pantallas grandes */
+@media (min-width: 1000px) {
+    #main-nav.nav-visible {
+        width: 30%;
+        left: 0; /* Alineado a la izquierda */
+        transform: translateX(0%);
+        /* max-width: 400px; */ /* Opcional: si 30% es demasiado grande */
+    }
 }
 
 /* Larger than desktop */
