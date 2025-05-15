@@ -64,21 +64,37 @@ header {
 .header-controls {
     display: flex;
     align-items: center;
+    gap: 10px; /* Espacio entre los botones */
 }
 
-#theme-toggle-button {
-    background: none;
-    border: none;
-    color: var(--accent-color);
-    font-size: 1.5em; /* Similar al botón de menú */
+#theme-toggle-button,
+#language-toggle-button,
+#menu-toggle {
+    background-color: transparent; /* Fondo transparente */
+    color: var(--accent-color); /* Color del icono, usando la variable de acento */
+    border: 1px solid var(--accent-color); /* Borde sutil con color de acento */
+    border-radius: 50%; /* Botones redondos */
+    width: 40px; /* Ancho fijo */
+    height: 40px; /* Alto fijo */
+    font-size: 1.2em; /* Tamaño del icono */
     cursor: pointer;
-    margin-right: 15px; /* Espacio entre el botón de tema y el de menú */
-    padding: 5px;
-    transition: color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transiciones suaves */
 }
 
-#theme-toggle-button:hover {
-    color: var(--accent-hover-color);
+#theme-toggle-button:hover,
+#language-toggle-button:hover,
+#menu-toggle:hover {
+    background-color: var(--accent-color-darker); /* Color de fondo al pasar el mouse, más oscuro que el acento */
+    color: var(--bg-color); /* Color del icono al pasar el mouse, contrastando con el fondo del botón */
+    border-color: var(--accent-color-darker);
+}
+
+#language-toggle-button {
+    font-size: 1.5em; /* Ajustar tamaño para emojis de bandera si es necesario */
+    padding: 0; /* Asegurar que el emoji esté centrado */
 }
 
 header h1 {

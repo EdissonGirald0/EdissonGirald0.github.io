@@ -9,9 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeOtherPanels(currentPanel) {
         if (currentPanel !== navContent && navContent.style.display === 'block') {
             navContent.style.display = 'none';
+            navToggleButton.setAttribute('aria-expanded', 'false');
         }
         if (currentPanel !== contactContent && contactContent.style.display === 'block') {
             contactContent.style.display = 'none';
+            contactToggleButton.setAttribute('aria-expanded', 'false');
         }
     }
 
@@ -20,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const isNavVisible = navContent.style.display === 'block';
             closeOtherPanels(navContent); // Cierra otros paneles antes de abrir/cerrar este
             navContent.style.display = isNavVisible ? 'none' : 'block';
+            navToggleButton.setAttribute('aria-expanded', !isNavVisible);
         });
     }
 
@@ -28,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const isContactVisible = contactContent.style.display === 'block';
             closeOtherPanels(contactContent); // Cierra otros paneles antes de abrir/cerrar este
             contactContent.style.display = isContactVisible ? 'none' : 'block';
+            contactToggleButton.setAttribute('aria-expanded', !isContactVisible);
         });
     }
 
@@ -42,9 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
             !isClickInsideContactToggle && !isClickInsideContactContent) {
             if (navContent && navContent.style.display === 'block') {
                 navContent.style.display = 'none';
+                navToggleButton.setAttribute('aria-expanded', 'false');
             }
             if (contactContent && contactContent.style.display === 'block') {
                 contactContent.style.display = 'none';
+                contactToggleButton.setAttribute('aria-expanded', 'false');
             }
         }
     });

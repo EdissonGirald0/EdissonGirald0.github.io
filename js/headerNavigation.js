@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         inactivityTimer = setTimeout(() => {
             if (mainNav.classList.contains('nav-visible')) {
                 mainNav.classList.remove('nav-visible');
+                menuToggle.setAttribute('aria-expanded', 'false');
             }
         }, INACTIVITY_TIMEOUT);
     }
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', function () {
             const isVisible = mainNav.classList.toggle('nav-visible');
+            menuToggle.setAttribute('aria-expanded', isVisible);
             if (isVisible) {
                 startInactivityTimer();
             } else {
