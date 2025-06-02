@@ -28,6 +28,261 @@
     --scrollbar-track-color: #f4f6f8;
 }
 
+/* Estilos base */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Estilos del contenedor principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* Estilos del header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--medium-bg-color);
+    z-index: 1000;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--subtle-border-color);
+}
+
+/* Estilos del main */
+main {
+    padding-top: 68px;
+    padding-bottom: 60px;
+    min-height: calc(100vh - 128px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos de las secciones */
+.section {
+    padding: 20px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Media Queries */
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 774px) {
+    .section {
+        padding: 15px;
+    }
+
+    .portfolio-offer, 
+    .projects-list li {
+        margin: 15px auto;
+        padding: 15px;
+    }
+}
+
+/* Pantallas medianas */
+@media (min-width: 775px) and (max-width: 950px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .portfolio-offer, 
+    .projects-list li {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 25px;
+    }
+
+    #main-nav.nav-visible {
+        width: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 280px;
+    }
+}
+
+/* Pantallas grandes */
+@media (min-width: 951px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+
+    .portfolio-offer, 
+    .projects-list li {
+        max-width: 1000px;
+        margin: 25px auto;
+        padding: 30px;
+    }
+
+    #main-nav.nav-visible {
+        width: 30%;
+        left: 0;
+        transform: none;
+        max-width: 400px;
+    }
+}
+
+/* Estilos específicos para el contenido */
+.texto1 {
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.portfolio-offers {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.projects-list {
+    width: 100%;
+    box-sizing: border-box;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para las tarjetas */
+.portfolio-offer, 
+.projects-list li {
+    background-color: var(--medium-bg-color);
+    border: 1px solid var(--subtle-border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--card-shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.portfolio-offer:hover, 
+.projects-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px var(--card-shadow-hover-color);
+    border-color: var(--accent-color);
+}
+
+/* Estilos para el footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1000;
+}
+
+.footer-icon-bar {
+    background-color: var(--medium-bg-color);
+    border-top: 1px solid var(--subtle-border-color);
+    border-left: 1px solid var(--subtle-border-color);
+    border-right: 1px solid var(--subtle-border-color);
+    border-radius: 15px 15px 0 0;
+    padding: 8px 15px;
+    margin: 0 auto;
+    box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-collapsible-content {
+    background-color: var(--medium-bg-color);
+    border-top: 1px solid var(--subtle-border-color);
+    padding: 20px;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ajustes específicos para el rango problemático */
+@media (min-width: 775px) and (max-width: 950px) {
+    .container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .portfolio-offer, 
+    .projects-list li {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 25px;
+    }
+
+    .footer-icon-bar,
+    .footer-collapsible-content {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* Asegurar que el contenido de texto esté correctamente alineado */
+    .texto1 p,
+    .texto1 ul,
+    .texto1 li {
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Ajustar espaciado de elementos */
+    .section h2 {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .section h3 {
+        margin: 20px 0;
+    }
+
+    .section h4 {
+        margin: 15px 0;
+    }
+
+    /* Ajustar listas */
+    .technologies-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 15px 0;
+    }
+
+    .technologies-list li {
+        margin: 0;
+    }
+}
+
 /* Estilos para el cuerpo de la página */
 body {
     margin: 0;
@@ -199,30 +454,6 @@ main {
     margin-bottom: 10px;
     color: var(--accent-color);
     transition: color 0.3s ease;
-}
-
-/* Tarjetas */
-.portfolio-offer, .projects-list li {
-    border: 1px solid var(--subtle-border-color);
-    border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 10px var(--card-shadow-color);
-    background-color: var(--medium-bg-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
-}
-
-.portfolio-offer:hover, .projects-list li:hover {
-    box-shadow: 0 6px 15px var(--card-shadow-hover-color);
-    border-color: var(--accent-color);
-    transform: translateY(-5px);
-}
-
-.portfolio-offer h3, .projects-list li h3 {
-    color: var(--accent-color);
-    margin-top: 0;
-    transition: color 0.3s ease;
-    margin-bottom: 15px; /* Espacio después del título del proyecto */
 }
 
 /* Estilos para la lista de tecnologías */
@@ -418,31 +649,160 @@ a:hover {
   scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
 }
 
-/* Media Queries - asegurar que los colores se hereden o se especifiquen si es necesario */
-@media (min-width: 750px) and (max-width: 999px) {
+/* Media Queries para pantallas medianas */
+@media (min-width: 775px) and (max-width: 950px) {
+    /* Estilos para el header */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+
+    /* Estilos para el main */
+    main {
+        padding-top: 68px;
+        padding-bottom: 60px;
+        min-height: calc(100vh);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Estilos para las secciones */
+    .section {
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 900px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Estilos para las tarjetas de proyectos y portafolio */
+    .portfolio-offer, 
+    .projects-list li {
+        margin: 20px auto;
+        max-width: 800px;
+        padding: 25px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Estilos para la navegación */
     #main-nav.nav-visible {
         width: 30%;
         left: 50%;
         transform: translateX(-50%);
         min-width: 280px;
-        background-color: var(--medium-bg-color); 
-        border-right: 1px solid var(--subtle-border-color); /* Asegurar borde con variable */
-        border-bottom: 1px solid var(--subtle-border-color);/* Asegurar borde con variable */
+        background-color: var(--medium-bg-color);
+        border: 1px solid var(--subtle-border-color);
     }
 
-    /* Reforzar estilos de los elementos internos del nav para este rango específico */
     #main-nav.nav-visible ul li {
-        border-bottom-color: var(--subtle-border-color);
+        border-bottom: 1px solid var(--subtle-border-color);
     }
 
     #main-nav.nav-visible ul li a {
         color: var(--text-color);
+        padding: 15px 20px;
     }
 
     #main-nav.nav-visible ul li a:hover,
     #main-nav.nav-visible ul li a.selected {
         background-color: var(--accent-color);
         color: var(--btn-text-color);
+    }
+
+    /* Estilos para el footer */
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .footer-icon-bar {
+        max-width: 900px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .footer-collapsible-content {
+        max-width: 900px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Ajustes específicos para el contenido */
+    .texto1 {
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .portfolio-offers {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .projects-list {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Ajustes para la imagen de perfil */
+    .profile-image {
+        width: 200px;
+        height: auto;
+        border-radius: 50%;
+        margin: 20px auto;
+    }
+
+    /* Ajustes para los títulos */
+    .section h2 {
+        margin-bottom: 30px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Ajustes para las listas de tecnologías */
+    .technologies-list {
+        justify-content: flex-start;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Media Queries para pantallas grandes */
+@media (min-width: 1000px) {
+    .section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+
+    .portfolio-offer, 
+    .projects-list li {
+        max-width: 1000px;
+        margin: 25px auto;
+    }
+
+    #main-nav.nav-visible {
+        width: 30%;
+        left: 0;
+        transform: none;
+        max-width: 400px;
+    }
+
+    .footer-icon-bar,
+    .footer-collapsible-content {
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }
 
@@ -482,15 +842,54 @@ a:hover {
 
 .my-atropos {
     width: 200px;
-    height: auto;
+    height: 200px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+}
+
+.my-atropos .atropos-scale {
+    width: 100%;
+    height: 100%;
+}
+
+.my-atropos .atropos-rotate {
+    width: 100%;
+    height: 100%;
+}
+
+.my-atropos .atropos-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    /* Considerar un borde o sombra sutil si es necesario */
-    /* border: 2px solid var(--accent-color); */
+    margin: 0;
+}
+
+/* Ajustes responsivos para la imagen */
+@media (min-width: 775px) and (max-width: 950px) {
+    .my-atropos {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (min-width: 951px) {
+    .my-atropos {
+        width: 300px;
+        height: 300px;
+    }
 }
 
 /* Estilos para la siguiente sección */
@@ -521,8 +920,8 @@ a:hover {
 }
 
 .projects-list {
-    list-style: none; 
-    padding: 0; 
+    list-style: none;
+    padding: 0;
 }
 
 .projects-list li {

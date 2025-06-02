@@ -25,6 +25,8 @@
 
     <title data-i18n-key="pageTitle">Portafolio de Edisson Giraldo - Ingeniero de Software</title>
     <link rel="icon" href="favicon.svg" type="image/x-icon">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <!-- Enlace al archivo CSS de Skeleton -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -35,33 +37,33 @@
 <body>
     <script>
         function isMobile() {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-    
-    function handleOrientationChange() {
-      const pageHeader = document.getElementById("pageHeader");
-      const mainContent = document.getElementById("mainContent");
-
-      if (isMobile() && pageHeader) {
-        if (window.matchMedia("(orientation: portrait)").matches) {
-          pageHeader.style.display = "none";
-        } else {
-          pageHeader.style.display = "flex";
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
-      } else if (pageHeader) {
-        pageHeader.style.display = "flex";
-      }
-      
-      if (typeof window.adjustMainContentPaddingGlobal === 'function') {
-        window.adjustMainContentPaddingGlobal();
-      }
-    }
     
-    // Escucha los cambios de orientación
-    window.addEventListener("orientationchange", handleOrientationChange);
+        function handleOrientationChange() {
+            const pageHeader = document.getElementById("pageHeader");
+            const mainContent = document.getElementById("mainContent");
+
+            if (isMobile() && pageHeader) {
+                if (window.matchMedia("(orientation: portrait)").matches) {
+                    pageHeader.style.display = "none";
+                } else {
+                    pageHeader.style.display = "flex";
+                }
+            } else if (pageHeader) {
+                pageHeader.style.display = "flex";
+            }
+            
+            if (typeof window.adjustMainContentPaddingGlobal === 'function') {
+                window.adjustMainContentPaddingGlobal();
+            }
+        }
     
-    // Ejecuta la función al cargar la página para configurar la visibilidad inicial
-    handleOrientationChange();
+        // Escucha los cambios de orientación
+        window.addEventListener("orientationchange", handleOrientationChange);
+    
+        // Ejecuta la función al cargar la página para configurar la visibilidad inicial
+        handleOrientationChange();
     </script>
     <header class="fixed-top" id="pageHeader">
         <div class="header-title-group">
@@ -120,27 +122,16 @@
                 <h2 class="name" data-i18n-key="aboutName">Edisson Giraldo</h2>
                 <time datetime="2024-03-13" class="date" style="text-align: left;" data-i18n-key="aboutDate">13/03/2024</time>
                 <div class="texto1">
-                    <p class="description" style="text-align: left;" data-i18n-key="aboutP1">
-                        Ingeniero de Software con más de 6 años de trayectoria, especializado en la creación de soluciones web full-stack e innovaciones en Inteligencia Artificial. Graduado con honores del Politécnico Grancolombiano, mi enfoque se centra en transformar ideas complejas en aplicaciones robustas y escalables.
-                    </p>
-                    <p data-i18n-key="aboutP2">
-                        Mi experiencia principal se ha consolidado en el stack MEAN (MongoDB, Express.js, Angular, Node.js), desarrollando arquitecturas limpias y eficientes. He liderado equipos en la entrega de proyectos web que destacan por su calidad y mantenibilidad.
-                    </p>
-                    <p data-i18n-key="aboutP3">
-                        Recientemente, mi foco se ha expandido hacia la vanguardia de la Inteligencia Artificial, donde exploro y aplico activamente:
-                    </p>
+                    <p class="description" style="text-align: left;" data-i18n-key="aboutP1"></p>
+                    <p data-i18n-key="aboutP2"></p>
+                    <p data-i18n-key="aboutP3"></p>
                     <ul>
-                        <li data-i18n-key="aboutLi1"><strong>Modelos de Lenguaje Avanzados (LLMs):</strong> Integración de modelos como los de OpenAI (GPT) y Mistral AI para potenciar aplicaciones con capacidades de procesamiento de lenguaje natural (NLP), generación de contenido autónomo, y análisis de sentimientos.</li>
-                        <li data-i18n-key="aboutLi2"><strong>Desarrollo de Agentes Inteligentes:</strong> Diseño e implementación de agentes autónomos y sistemas multi-agente (MAS) para automatizar tareas complejas, optimizar flujos de trabajo y crear experiencias de usuario interactivas y personalizadas.</li>
-                        <li data-i18n-key="aboutLi3"><strong>Técnicas de Machine Learning:</strong> Aplicación de algoritmos de aprendizaje automático para análisis predictivo, reconocimiento de patrones y toma de decisiones basada en datos.</li>
+                        <li data-i18n-key="aboutLi1"></li>
+                        <li data-i18n-key="aboutLi2"></li>
+                        <li data-i18n-key="aboutLi3"></li>
                     </ul>
-                    <p data-i18n-key="aboutP4">
-                        He integrado estas tecnologías en diversos proyectos, mejorando la inteligencia de las aplicaciones y optimizando procesos empresariales. Por ejemplo, he implementado soluciones basadas en OpenAI para mejorar la interacción con el usuario y sistemas de automatización con Mistral para incrementar la eficiencia operativa.
-                    </p>
-                    <p data-i18n-key="aboutP5">
-                        Mi pasión es mantenerme en la frontera de la innovación tecnológica, especialmente en IA, cloud computing y desarrollo de software. Busco constantemente proyectos desafiantes que me permitan aplicar mis conocimientos para generar un impacto significativo y contribuir al éxito de equipos y organizaciones.
-                    </p>
-                    <!-- Contenido de la sección "Quién soy" -->
+                    <p data-i18n-key="aboutP4"></p>
+                    <p data-i18n-key="aboutP5"></p>
                 </div>
             </div>
         </div>
@@ -150,272 +141,128 @@
                 <ul class="projects-list">
                     <li>
                         <h3 data-i18n-key="project1Title">Applied Data Science Capstone</h3>
-                        <p data-i18n-key="project1Desc1">
-                            Este repositorio contiene el proyecto final del curso <em data-i18n-key="project1CourseName">Applied Data Science
-                                Capstone</em>,
-                            diseñado para aplicar las habilidades y conocimientos adquiridos en ciencia de datos en un
-                            caso práctico.
-                            El proyecto incluye:
-                        </p>
+                        <p data-i18n-key="project1Desc1"></p>
                         <ul>
-                            <li data-i18n-key="project1Li1"><strong>Definición del problema:</strong> Identificación de un problema relevante para
-                                resolver mediante análisis de datos.</li>
-                            <li data-i18n-key="project1Li2"><strong>Recolección de datos:</strong> Obtención y procesamiento de datos de fuentes
-                                relevantes.</li>
-                            <li data-i18n-key="project1Li3"><strong>Análisis exploratorio de datos:</strong> Limpieza y exploración inicial para
-                                descubrir patrones y relaciones significativas.</li>
-                            <li data-i18n-key="project1Li4"><strong>Modelado:</strong> Aplicación de técnicas de aprendizaje automático para
-                                resolver el problema planteado.</li>
-                            <li data-i18n-key="project1Li5"><strong>Visualización:</strong> Creación de gráficos y tableros interactivos para
-                                comunicar los resultados de forma efectiva.</li>
-                            <li data-i18n-key="project1Li6"><strong>Conclusiones:</strong> Recomendaciones basadas en los hallazgos obtenidos
-                                durante el análisis.</li>
+                            <li data-i18n-key="project1Li1"></li>
+                            <li data-i18n-key="project1Li2"></li>
+                            <li data-i18n-key="project1Li3"></li>
+                            <li data-i18n-key="project1Li4"></li>
+                            <li data-i18n-key="project1Li5"></li>
+                            <li data-i18n-key="project1Li6"></li>
                         </ul>
-                        <p data-i18n-key="project1Desc2">
-                            Este proyecto combina técnicas avanzadas de análisis de datos, modelado predictivo y
-                            visualización,
-                            utilizando herramientas como <strong>Python</strong>, <strong>Pandas</strong>,
-                            <strong>Scikit-learn</strong>, y <strong>Matplotlib</strong>, entre otras.
-                        </p>
-                        <h4 data-i18n-key="project1FeatTitle">Características del proyecto</h4>
+                        <p data-i18n-key="project1Desc2"></p>
+                        <h4 data-i18n-key="project1FeatTitle"></h4>
                         <ul>
-                            <li data-i18n-key="project1FeatLi1">Enfoque en la resolución de problemas reales.</li>
-                            <li data-i18n-key="project1FeatLi2">Diseño modular y reproducible para facilitar su comprensión y escalabilidad.</li>
-                            <li data-i18n-key="project1FeatLi3">Código completamente documentado y alineado con las mejores prácticas.</li>
+                            <li data-i18n-key="project1FeatLi1"></li>
+                            <li data-i18n-key="project1FeatLi2"></li>
+                            <li data-i18n-key="project1FeatLi3"></li>
                         </ul>
-                        
-                        <h4 data-i18n-key="project1TechTitle">Tecnologías Utilizadas</h4>
+                        <h4 data-i18n-key="project1TechTitle"></h4>
                         <ul class="technologies-list">
-                            <li data-i18n-key="project1TechLi1">Python</li>
-                            <li data-i18n-key="project1TechLi2">Pandas</li>
-                            <li data-i18n-key="project1TechLi3">Scikit-learn</li>
-                            <li data-i18n-key="project1TechLi4">Matplotlib</li>
-                            <li data-i18n-key="project1TechLi5">Jupyter Notebook</li>
+                            <li data-i18n-key="project1TechLi1"></li>
+                            <li data-i18n-key="project1TechLi2"></li>
+                            <li data-i18n-key="project1TechLi3"></li>
+                            <li data-i18n-key="project1TechLi4"></li>
+                            <li data-i18n-key="project1TechLi5"></li>
                         </ul>
-
-                        <p data-i18n-key="project1Contribute">
-                            Si tienes sugerencias o encuentras algo que pueda mejorarse, no dudes en abrir un
-                            <em data-i18n-key="project1Issue">issue</em> o contribuir al proyecto.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/EdissonGirald0/Applied-Data-Science-Capstone" class="btn btn-project-repo" target="_blank">
-                                <i class="fab fa-github"></i> <span data-i18n-key="projectRepoButton">Repositorio</span>
-                            </a>
-                            <a href="https://github.com/EdissonGirald0" class="btn btn-project-author" target="_blank">
-                                <i class="fas fa-user"></i> <span data-i18n-key="projectAuthorButton">Autor: Edisson Giraldo</span>
-                            </a>
-                        </div>
+                        <p data-i18n-key="project1Contribute"></p>
                     </li>
                     <li>
-                        <h3 data-i18n-key="project2Title">Reconocimiento Facial</h3>
-                        <p data-i18n-key="project2Desc1">
-                            El proyecto <strong data-i18n-key="project2Name">Reconocimiento Facial</strong> se enfoca en el desarrollo de un sistema
-                            eficiente para
-                            identificar y verificar rostros utilizando técnicas avanzadas de visión por computadora e
-                            inteligencia artificial.
-                            Este sistema tiene aplicaciones en seguridad, autenticación biométrica y gestión de accesos.
-                        </p>
-
-                        <h4 data-i18n-key="project2FeatTitle">Características Principales</h4>
+                        <h3 data-i18n-key="project2Title"></h3>
+                        <p data-i18n-key="project2Desc1"></p>
+                        <h4 data-i18n-key="project2FeatTitle"></h4>
                         <ul>
-                            <li data-i18n-key="project2FeatLi1">
-                                <strong data-i18n-key="project2FeatLi1Strong">Detección de Rostros:</strong> Identificación precisa de rostros en imágenes o
-                                videos en tiempo real.
-                            </li>
-                            <li data-i18n-key="project2FeatLi2">
-                                <strong data-i18n-key="project2FeatLi2Strong">Reconocimiento de Identidades:</strong> Comparación de rostros con una base de
-                                datos previamente entrenada.
-                            </li>
-                            <li data-i18n-key="project2FeatLi3">
-                                <strong data-i18n-key="project2FeatLi3Strong">Procesamiento en Tiempo Real:</strong> Optimización para lograr un desempeño
-                                rápido y confiable.
-                            </li>
-                            <li data-i18n-key="project2FeatLi4">
-                                <strong data-i18n-key="project2FeatLi4Strong">Seguridad y Privacidad:</strong> Almacenamiento seguro y tratamiento ético de
-                                los datos biométricos.
-                            </li>
+                            <li data-i18n-key="project2FeatLi1"></li>
+                            <li data-i18n-key="project2FeatLi2"></li>
+                            <li data-i18n-key="project2FeatLi3"></li>
+                            <li data-i18n-key="project2FeatLi4"></li>
                         </ul>
-
-                        <h4 data-i18n-key="project2TechTitle">Tecnologías Utilizadas</h4>
+                        <h4 data-i18n-key="project2TechTitle"></h4>
                         <ul class="technologies-list">
-                            <li data-i18n-key="project2TechLi1">Python</li>
-                            <li data-i18n-key="project2TechLi2">OpenCV</li>
-                            <li data-i18n-key="project2TechLi3">Dlib</li>
-                            <li data-i18n-key="project2TechLi4">TensorFlow / PyTorch</li>
-                            <li data-i18n-key="project2TechLi5">Flask</li>
+                            <li data-i18n-key="project2TechLi1"></li>
+                            <li data-i18n-key="project2TechLi2"></li>
+                            <li data-i18n-key="project2TechLi3"></li>
+                            <li data-i18n-key="project2TechLi4"></li>
+                            <li data-i18n-key="project2TechLi5"></li>
                         </ul>
-
-                        <h4 data-i18n-key="project2UseCaseTitle">Casos de Uso</h4>
+                        <h4 data-i18n-key="project2UseCaseTitle"></h4>
                         <ul>
-                            <li data-i18n-key="project2UseCaseLi1">Control de acceso en sistemas de seguridad.</li>
-                            <li data-i18n-key="project2UseCaseLi2">Autenticación en aplicaciones biométricas.</li>
-                            <li data-i18n-key="project2UseCaseLi3">Monitoreo inteligente en entornos públicos o privados.</li>
+                            <li data-i18n-key="project2UseCaseLi1"></li>
+                            <li data-i18n-key="project2UseCaseLi2"></li>
+                            <li data-i18n-key="project2UseCaseLi3"></li>
                         </ul>
-
-                        <h4 data-i18n-key="project2ContributeTitle">¿Cómo Contribuir?</h4>
-                        <p data-i18n-key="project2ContributeDesc">
-                            Si deseas colaborar en el desarrollo de este proyecto, puedes explorar el código, reportar
-                            problemas,
-                            sugerir nuevas funcionalidades o realizar contribuciones mediante <em data-i18n-key="project2PullRequests">pull requests</em>.
-                            Toda aportación es valiosa para hacer crecer esta herramienta.
-                        </p>
-
-                        <h4 data-i18n-key="project2LinksTitle">Enlaces Relacionados</h4>
-                        <div class="project-links">
-                             <a href="https://github.com/EdissonGirald0/reconocimiento-Facia-" class="btn btn-project-repo" target="_blank">
-                                <i class="fab fa-github"></i> <span data-i18n-key="projectRepoButton">Repositorio</span>
-                            </a>
-                            <a href="https://github.com/EdissonGirald0" class="btn btn-project-author" target="_blank">
-                                <i class="fas fa-user"></i> <span data-i18n-key="projectAuthorButton">Autor: Edisson Giraldo</span>
-                            </a>
-                        </div>
-
-                        <p data-i18n-key="project2FinalDesc">
-                            Proyecto desarrollado para explorar y aplicar técnicas avanzadas de visión por
-                            computadora
-                            e inteligencia artificial en contextos del mundo real.
-                        </p>
-
+                        <h4 data-i18n-key="project2ContributeTitle"></h4>
+                        <p data-i18n-key="project2ContributeDesc"></p>
+                        <h4 data-i18n-key="project2LinksTitle"></h4>
+                        <p data-i18n-key="project2FinalDesc"></p>
                     </li>
                     <li>
-                        <h3 data-i18n-key="project3Title">ClimaIA</h3>
-                        <p data-i18n-key="project3Desc1">
-                            Proyecto de análisis climático que utiliza inteligencia artificial para realizar predicciones precisas y accesibles. 
-                            Este sistema combina algoritmos avanzados de aprendizaje automático con datos meteorológicos para ofrecer una herramienta 
-                            innovadora, beneficiando a comunidades y empresas en la planificación y toma de decisiones basadas en el clima.
-                        </p>
-
-                        <h4 data-i18n-key="project3FeatTitle">Características del Proyecto</h4>
+                        <h3 data-i18n-key="project3Title"></h3>
+                        <p data-i18n-key="project3Desc1"></p>
+                        <h4 data-i18n-key="project3FeatTitle"></h4>
                         <ul>
-                            <li data-i18n-key="project3FeatLi1">
-                                <strong data-i18n-key="project3FeatLi1Strong">Procesamiento de Datos Meteorológicos:</strong> Integración de datos climáticos
-                                históricos y en tiempo real.
-                            </li>
-                            <li data-i18n-key="project3FeatLi2">
-                                <strong data-i18n-key="project3FeatLi2Strong">Modelos Predictivos:</strong> Uso de algoritmos avanzados como regresión, redes
-                                neuronales y modelos temporales para predicciones precisas.
-                            </li>
-                            <li data-i18n-key="project3FeatLi3">
-                                <strong data-i18n-key="project3FeatLi3Strong">Visualización Intuitiva:</strong> Gráficos interactivos que facilitan la
-                                interpretación de los resultados.
-                            </li>
-                            <li data-i18n-key="project3FeatLi4">
-                                <strong data-i18n-key="project3FeatLi4Strong">Escalabilidad:</strong> Sistema modular que puede adaptarse a diferentes
-                                regiones y necesidades climáticas.
-                            </li>
+                            <li data-i18n-key="project3FeatLi1"></li>
+                            <li data-i18n-key="project3FeatLi2"></li>
+                            <li data-i18n-key="project3FeatLi3"></li>
+                            <li data-i18n-key="project3FeatLi4"></li>
                         </ul>
-
-                        <h4 data-i18n-key="project3TechTitle">Tecnologías Utilizadas</h4>
+                        <h4 data-i18n-key="project3TechTitle"></h4>
                         <ul class="technologies-list">
-                            <li data-i18n-key="project3TechLi1">Python</li>
-                            <li data-i18n-key="project3TechLi2">Pandas y NumPy</li>
-                            <li data-i18n-key="project3TechLi3">TensorFlow / Scikit-learn</li>
-                            <li data-i18n-key="project3TechLi4">Matplotlib y Seaborn</li>
-                            <li data-i18n-key="project3TechLi5">APIs Climáticas</li>
-                            <li data-i18n-key="project3TechLi6">Jupyter Notebook</li>
+                            <li data-i18n-key="project3TechLi1"></li>
+                            <li data-i18n-key="project3TechLi2"></li>
+                            <li data-i18n-key="project3TechLi3"></li>
+                            <li data-i18n-key="project3TechLi4"></li>
+                            <li data-i18n-key="project3TechLi5"></li>
+                            <li data-i18n-key="project3TechLi6"></li>
                         </ul>
-
-                        <h4 data-i18n-key="project3ContributeTitle">¿Cómo Contribuir?</h4>
-                        <p data-i18n-key="project3ContributeDesc">
-                            Si estás interesado en colaborar, puedes explorar el código, reportar problemas, sugerir
-                            mejoras o enviar
-                            tus propias contribuciones mediante <em data-i18n-key="project3PullRequests">pull requests</em>. Toda ayuda es bienvenida para
-                            mejorar y escalar este proyecto.
-                        </p>
-
-                        <h4 data-i18n-key="project3LinksTitle">Enlaces Relacionados</h4>
-                        <div class="project-links">
-                            <a href="https://github.com/Resuelve-IA/climaIa" class="btn btn-project-repo" target="_blank">
-                                <i class="fab fa-github"></i> <span data-i18n-key="projectRepoButton">Repositorio</span>
-                            </a>
-                            <a href="https://github.com/Resuelve-IA" class="btn btn-project-author" target="_blank">
-                                <i class="fas fa-user"></i> <span data-i18n-key="projectAuthorButtonAlt">Autor: Resuelve IA</span>
-                            </a>
-                        </div>
-                        <p data-i18n-key="project3FinalDesc">
-                            Proyecto desarrollado con pasión por la ciencia de datos y la inteligencia artificial
-                            para mejorar nuestra relación con el medio ambiente.
-                        </p>
+                        <h4 data-i18n-key="project3ContributeTitle"></h4>
+                        <p data-i18n-key="project3ContributeDesc"></p>
+                        <h4 data-i18n-key="project3LinksTitle"></h4>
+                        <p data-i18n-key="project3FinalDesc"></p>
                     </li>
                 </ul>
-                <p data-i18n-key="projectsLookAtRepos">¡Echa un vistazo a mis repositorios para ver más de mi trabajo!</p>
+                <p data-i18n-key="projectsLookAtRepos"></p>
             </div>
         </div>
         <div class="row">
             <div id="portafolio" class="section, texto1">
-                <h2 data-i18n-key="portfolioTitle">Portafolio</h2>
+                <h2 data-i18n-key="portfolioTitle"></h2>
                 <div class="portfolio-offers">
                     <div class="portfolio-offer">
-                        <h3 data-i18n-key="portfolio1Title">Desarrollo Web Fullstack</h3>
-                        <p data-i18n-key="portfolio1Desc1">
-                            Ofrezco servicios completos de desarrollo web fullstack, abordando cada etapa del ciclo de
-                            vida del proyecto:
-                            desde el diseño inicial y la implementación hasta el despliegue y la optimización. Trabajo
-                            con tecnologías
-                            modernas como <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>JavaScript</strong>
-                            (incluyendo <strong>React</strong> y <strong>Node.js</strong>),
-                            y bases de datos como <strong>MongoDB</strong>.
-                        </p>
-                        <p data-i18n-key="portfolio1Desc2">
-                            Mi experiencia incluye la creación de:
-                        </p>
+                        <h3 data-i18n-key="portfolio1Title"></h3>
+                        <p data-i18n-key="portfolio1Desc1"></p>
+                        <p data-i18n-key="portfolio1Desc2"></p>
                         <ul>
-                            <li data-i18n-key="portfolio1Li1">Plataformas de comercio electrónico escalables.</li>
-                            <li data-i18n-key="portfolio1Li2">Sistemas de gestión de contenido (CMS).</li>
-                            <li data-i18n-key="portfolio1Li3">Aplicaciones dinámicas con análisis en tiempo real.</li>
-                            <li data-i18n-key="portfolio1Li4">Interfaces intuitivas centradas en el usuario.</li>
+                            <li data-i18n-key="portfolio1Li1"></li>
+                            <li data-i18n-key="portfolio1Li2"></li>
+                            <li data-i18n-key="portfolio1Li3"></li>
+                            <li data-i18n-key="portfolio1Li4"></li>
                         </ul>
-                        <p data-i18n-key="portfolio1Desc3">
-                            Ofrezco soluciones personalizadas con un enfoque ágil y orientado a resultados, asegurando
-                            productos robustos y de alta calidad.
-                        </p>
+                        <p data-i18n-key="portfolio1Desc3"></p>
                     </div>
                     <div class="portfolio-offer">
-                        <h3 data-i18n-key="portfolio2Title">Desarrollo de Aplicaciones Móviles</h3>
-                        <p data-i18n-key="portfolio2Desc1">
-                            Diseñamos y desarrollamos aplicaciones móviles para <strong>Android</strong> e
-                            <strong>iOS</strong> que ofrecen experiencias fluidas y de alto rendimiento.
-                            Utilizo herramientas como <strong>Flutter</strong> y <strong>React Native</strong> para
-                            crear aplicaciones multiplataforma eficientes.
-                        </p>
-                        <p data-i18n-key="portfolio2Desc2">
-                            Mis proyectos de aplicaciones móviles se caracterizan por:
-                        </p>
+                        <h3 data-i18n-key="portfolio2Title"></h3>
+                        <p data-i18n-key="portfolio2Desc1"></p>
+                        <p data-i18n-key="portfolio2Desc2"></p>
                         <ul>
-                            <li data-i18n-key="portfolio2Li1">Diseño centrado en la experiencia del usuario (UX/UI).</li>
-                            <li data-i18n-key="portfolio2Li2">Integración de funciones avanzadas como notificaciones push y bases de datos en la nube.
-                            </li>
-                            <li data-i18n-key="portfolio2Li3">Seguridad robusta para proteger datos sensibles.</li>
-                            <li data-i18n-key="portfolio2Li4">Escalabilidad para crecer con las necesidades de tu negocio.</li>
+                            <li data-i18n-key="portfolio2Li1"></li>
+                            <li data-i18n-key="portfolio2Li2"></li>
+                            <li data-i18n-key="portfolio2Li3"></li>
+                            <li data-i18n-key="portfolio2Li4"></li>
                         </ul>
-                        <p data-i18n-key="portfolio2Desc3">
-                            Mi objetivo es crear aplicaciones que combinen funcionalidad y diseño, generando un impacto
-                            positivo para los usuarios finales.
-                        </p>
+                        <p data-i18n-key="portfolio2Desc3"></p>
                     </div>
                     <div class="portfolio-offer">
-                        <h3 data-i18n-key="portfolio3Title">Inteligencia Artificial y Ciencia de Datos</h3>
-                        <p data-i18n-key="portfolio3Desc1">
-                            Ofrezco servicios especializados en <strong data-i18n-key="portfolio3Strong1">implementación de soluciones de inteligencia
-                                artificial</strong> y análisis de datos,
-                            ayudando a empresas a transformar datos en conocimiento accionable. Utilizo herramientas
-                            avanzadas como
-                            <strong>Python</strong>, <strong>Pandas</strong>, <strong>TensorFlow</strong>, y
-                            <strong>PyTorch</strong> para desarrollar modelos inteligentes.
-                        </p>
-                        <p data-i18n-key="portfolio3Desc2">
-                            Algunas aplicaciones clave incluyen:
-                        </p>
+                        <h3 data-i18n-key="portfolio3Title"></h3>
+                        <p data-i18n-key="portfolio3Desc1"></p>
+                        <p data-i18n-key="portfolio3Desc2"></p>
                         <ul>
-                            <li data-i18n-key="portfolio3Li1">Modelos predictivos para optimizar decisiones empresariales.</li>
-                            <li data-i18n-key="portfolio3Li2">Sistemas de recomendación personalizados.</li>
-                            <li data-i18n-key="portfolio3Li3">Procesamiento de lenguaje natural (NLP) para análisis de texto y chatbots.</li>
-                            <li data-i18n-key="portfolio3Li4">Visión por computadora para reconocimiento de imágenes y video.</li>
+                            <li data-i18n-key="portfolio3Li1"></li>
+                            <li data-i18n-key="portfolio3Li2"></li>
+                            <li data-i18n-key="portfolio3Li3"></li>
+                            <li data-i18n-key="portfolio3Li4"></li>
                         </ul>
-                        <p data-i18n-key="portfolio3Desc3">
-                            Mi enfoque combina la experiencia técnica con la comprensión de problemas empresariales,
-                            creando soluciones que generan valor real.
-                        </p>
+                        <p data-i18n-key="portfolio3Desc3"></p>
                     </div>
                 </div>
             </div>
@@ -425,59 +272,52 @@
     <footer class="fixed-bottom footer">
         <div class="container">
             <div class="footer-icon-bar row">
-                <!-- Icono para Navegación del Footer -->
                 <div class="footer-icon-item column">
                     <button id="footer-nav-toggle" aria-label="Toggle footer navigation" aria-controls="footer-nav-content" aria-expanded="false" data-i18n-aria-label-key="footerNavToggleLabel">
-                        <i class="fas fa-list-ul"></i> <!-- Icono de lista/menú -->
+                        <i class="fas fa-list-ul"></i>
                     </button>
                 </div>
-                <!-- Icono para Información de Contacto -->
                 <div class="footer-icon-item column">
                     <button id="footer-contact-toggle" aria-label="Toggle contact information" aria-controls="footer-contact-content" aria-expanded="false" data-i18n-aria-label-key="footerContactToggleLabel">
-                        <i class="fas fa-info-circle"></i> <!-- Icono de información -->
+                        <i class="fas fa-info-circle"></i>
                     </button>
                 </div>
-                <!-- Botón Ir Arriba (mantenido o podría ser un icono también) -->
                 <div class="footer-icon-item column">
                     <button onclick="scrollToTop()" id="goTopButton" title="Ir arriba" data-i18n-title-key="goTopButtonTitle">
-                        <i class="fas fa-arrow-up"></i> <span data-i18n-key="goTopButtonText">Ir arriba</span>
+                        <i class="fas fa-arrow-up"></i> <span data-i18n-key="goTopButtonText"></span>
                     </button>
                 </div>
             </div>
-
-            <!-- Contenido desplegable para Navegación del Footer -->
             <div id="footer-nav-content" class="footer-collapsible-content" style="display: none;">
                 <ul class="footer-nav">
-                    <li><a href="#quien-soy" class="selected"><span data-i18n-key="footerNavWhoAmI">Quién soy</span></a></li>
-                    <li><a href="#proyectos"><span data-i18n-key="footerNavProjects">Proyectos</span></a></li>
-                    <li><a href="#portafolio"><span data-i18n-key="footerNavPortfolio">Portafolio</span></a></li>
+                    <li><a href="#quien-soy" class="selected"><span data-i18n-key="footerNavWhoAmI"></span></a></li>
+                    <li><a href="#proyectos"><span data-i18n-key="footerNavProjects"></span></a></li>
+                    <li><a href="#portafolio"><span data-i18n-key="footerNavPortfolio"></span></a></li>
                     <li><a href="img/Hoja de vida adtualizada2024.pdf" download="EdissonGirald0.pdf" class="btn">
-                            <i class="fas fa-download"></i> <span data-i18n-key="footerNavDownloadCV">Descargar CV</span>
-                        </a>
-                    </li>
+                        <i class="fas fa-download"></i> <span data-i18n-key="footerNavDownloadCV"></span>
+                    </a></li>
                 </ul>
             </div>
-
-            <!-- Contenido desplegable para Información de Contacto -->
             <div id="footer-contact-content" class="footer-collapsible-content" style="display: none;">
                 <p>
-                    <span data-i18n-key="footerAddressLabel">Dirección:</span>
-                    <a href="https://www.google.com/maps?q=Carrera+1a+%2318-35,+Mosquera,+Cundinamarca,+Colombia"
-                        target="_blank">
+                    <span data-i18n-key="footerAddressLabel"></span>
+                    <a href="https://www.google.com/maps?q=Carrera+1a+%2318-35,+Mosquera,+Cundinamarca,+Colombia" target="_blank">
                         Carrera 1a #18-35, Mosquera (Cundinamarca), Colombia
                         <i class="fas fa-map-marker-alt"></i>
                     </a>
                 </p>
-                <p><i class="fas fa-phone"></i> <span data-i18n-key="footerPhone">Teléfono:</span> <a href="tel:+573025576453">+57 302 5576453</a></p>
-                <p><i class="fas fa-envelope"></i> <span data-i18n-key="footerEmail">Correo electrónico:</span> <a
-                        href="mailto:edisson.giraldo.dev@gmail.com">edisson.giraldo.dev@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <span data-i18n-key="footerPhone"></span> <a href="tel:+573025576453">+57 302 5576453</a></p>
+                <p><i class="fas fa-envelope"></i> <span data-i18n-key="footerEmail"></span> <a href="mailto:edisson.giraldo.dev@gmail.com">edisson.giraldo.dev@gmail.com</a></p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/edisson-giraldo-00586496" target="_blank"><i
-                            class="fab fa-linkedin"></i> <span data-i18n-key="footerLinkedIn">LinkedIn</span></a>
-                    <a href="https://github.com/EdissonGirald0" target="_blank"><i
-                            class="fab fa-github"></i> <span data-i18n-key="footerGithub">Github</span></a>
-                    <a href="https://wa.me/573025576453" target="_blank"><i class="fab fa-whatsapp"></i>
-                        <span data-i18n-key="footerWhatsApp">WhatsApp</span></a>
+                    <a href="https://www.linkedin.com/in/edisson-giraldo-00586496" target="_blank">
+                        <i class="fab fa-linkedin"></i> <span data-i18n-key="footerLinkedIn"></span>
+                    </a>
+                    <a href="https://github.com/EdissonGirald0" target="_blank">
+                        <i class="fab fa-github"></i> <span data-i18n-key="footerGithub"></span>
+                    </a>
+                    <a href="https://wa.me/573025576453" target="_blank">
+                        <i class="fab fa-whatsapp"></i> <span data-i18n-key="footerWhatsApp"></span>
+                    </a>
                 </div>
             </div>
         </div>
