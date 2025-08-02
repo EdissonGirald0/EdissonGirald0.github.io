@@ -91,6 +91,42 @@ main {
         margin: 15px auto;
         padding: 15px;
     }
+    
+    /* Tecnologías optimizadas para móviles */
+    .technologies-list {
+        gap: 6px;
+    }
+    
+    .tech-badge {
+        padding: 6px 10px;
+        font-size: 0.75em;
+        border-radius: 14px;
+        min-width: 85px;
+        max-width: 140px;
+    }
+    
+    .tech-badge i {
+        font-size: 0.9em;
+    }
+}
+
+/* Pantallas extra pequeñas */
+@media (max-width: 480px) {
+    .technologies-list {
+        gap: 4px;
+    }
+    
+    .tech-badge {
+        padding: 5px 8px;
+        font-size: 0.7em;
+        border-radius: 12px;
+        min-width: 75px;
+        max-width: 120px;
+    }
+    
+    .tech-badge i {
+        font-size: 0.8em;
+    }
 }
 
 /* Pantallas medianas */
@@ -118,6 +154,22 @@ main {
         transform: translateX(-50%);
         min-width: 280px;
     }
+    
+    /* Tecnologías optimizadas para tabletas */
+    .technologies-list {
+        gap: 8px;
+    }
+    
+    .tech-badge {
+        padding: 7px 12px;
+        font-size: 0.8em;
+        min-width: 90px;
+        max-width: 150px;
+    }
+    
+    .tech-badge i {
+        font-size: 0.95em;
+    }
 }
 
 /* Pantallas grandes */
@@ -144,6 +196,23 @@ main {
         left: 0;
         transform: none;
         max-width: 400px;
+    }
+    
+    /* Tecnologías optimizadas para pantallas grandes */
+    .technologies-list {
+        gap: 10px;
+        max-width: 100%;
+    }
+    
+    .tech-badge {
+        padding: 8px 14px;
+        font-size: 0.85em;
+        min-width: 100px;
+        max-width: 160px;
+    }
+    
+    .tech-badge i {
+        font-size: 1em;
     }
 }
 
@@ -462,29 +531,351 @@ main {
     padding: 0;
     margin: 15px 0;
     display: flex;
-    flex-wrap: wrap; /* Para que las píldoras pasen a la siguiente línea si no caben */
-    justify-content: flex-start; /* Alinear al inicio por defecto */
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .technologies-list li {
-    background-color: var(--accent-color);
-    color: var(--btn-text-color); /* Usar el color de texto de botón para contraste */
-    padding: 5px 12px;
-    border-radius: 15px; /* Píldoras redondeadas */
-    margin-right: 8px;
-    margin-bottom: 8px;
-    font-size: 0.85em;
-    font-weight: bold;
-    /* Resetear estilos de .projects-list li si es necesario */
-    border: none; 
-    box-shadow: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    /* Resetear los estilos heredados de .projects-list li */
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    transform: none !important;
+    
+    /* Aplicar nuevos estilos solo al contenido */
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
 .technologies-list li:hover {
-    background-color: var(--accent-hover-color);
-    /* Resetear transform de .projects-list li:hover si aplica */
-    transform: none;
+    transform: translateY(-2px);
+}
+
+/* Estilos específicos para los badges de tecnología */
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 16px;
+    font-size: 0.85em;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 100px;
+    max-width: 160px;
+    justify-content: center;
+    text-align: center;
+    
+    /* Fondo sutil uniforme que permite ver iconos */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    backdrop-filter: blur(10px);
+}
+
+.tech-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
+}
+
+.tech-badge i {
+    font-size: 1em;
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+/* Animaciones suaves para las tecnologías */
+.technologies-list li:hover {
+    transform: translateY(-2px);
+}
+
+/* Efecto de foco mejorado para accesibilidad */
+.technologies-list li:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+
+
+/* Colores específicos para tecnologías - versión sutil */
+.tech-python {
+    border-color: #3776ab;
+    background: linear-gradient(135deg, rgba(55, 118, 171, 0.1), rgba(255, 212, 59, 0.1));
+}
+
+.tech-python i {
+    color: #3776ab;
+}
+
+.tech-fastapi {
+    border-color: #009688;
+    background: linear-gradient(135deg, rgba(0, 150, 136, 0.1), rgba(76, 175, 80, 0.1));
+}
+
+.tech-fastapi i {
+    color: #009688;
+}
+
+.tech-streamlit {
+    border-color: #ff4b4b;
+    background: linear-gradient(135deg, rgba(255, 75, 75, 0.1), rgba(255, 107, 107, 0.1));
+}
+
+.tech-streamlit i {
+    color: #ff4b4b;
+}
+
+.tech-gemini {
+    border-color: #4285f4;
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(52, 168, 83, 0.1));
+}
+
+.tech-gemini i {
+    color: #4285f4;
+}
+
+.tech-langgraph {
+    border-color: #6c47ff;
+    background: linear-gradient(135deg, rgba(108, 71, 255, 0.1), rgba(156, 71, 255, 0.1));
+}
+
+.tech-langgraph i {
+    color: #6c47ff;
+}
+
+.tech-pytest {
+    border-color: #0a9edc;
+    background: linear-gradient(135deg, rgba(10, 158, 220, 0.1), rgba(71, 163, 255, 0.1));
+}
+
+.tech-pytest i {
+    color: #0a9edc;
+}
+
+.tech-docker {
+    border-color: #2496ed;
+    background: linear-gradient(135deg, rgba(36, 150, 237, 0.1), rgba(13, 183, 237, 0.1));
+}
+
+.tech-docker i {
+    color: #2496ed;
+}
+
+.tech-opencv {
+    border-color: #5c3ee8;
+    background: linear-gradient(135deg, rgba(92, 62, 232, 0.1), rgba(0, 212, 170, 0.1));
+}
+
+.tech-opencv i {
+    color: #5c3ee8;
+}
+
+.tech-tensorflow {
+    border-color: #ff6f00;
+    background: linear-gradient(135deg, rgba(255, 111, 0, 0.1), rgba(255, 143, 0, 0.1));
+}
+
+.tech-tensorflow i {
+    color: #ff6f00;
+}
+
+.tech-javascript {
+    border-color: #f7df1e;
+    background: linear-gradient(135deg, rgba(247, 223, 30, 0.1), rgba(240, 219, 79, 0.1));
+}
+
+.tech-javascript i {
+    color: #f7df1e;
+}
+
+.tech-nodejs {
+    border-color: #339933;
+    background: linear-gradient(135deg, rgba(51, 153, 51, 0.1), rgba(104, 160, 99, 0.1));
+}
+
+.tech-nodejs i {
+    color: #339933;
+}
+
+.tech-react {
+    border-color: #61dafb;
+    background: linear-gradient(135deg, rgba(97, 218, 251, 0.1), rgba(33, 212, 253, 0.1));
+}
+
+.tech-react i {
+    color: #61dafb;
+}
+
+.tech-mongodb {
+    border-color: #47a248;
+    background: linear-gradient(135deg, rgba(71, 162, 72, 0.1), rgba(75, 179, 61, 0.1));
+}
+
+.tech-mongodb i {
+    color: #47a248;
+}
+
+.tech-angular {
+    border-color: #dd0031;
+    background: linear-gradient(135deg, rgba(221, 0, 49, 0.1), rgba(195, 0, 47, 0.1));
+}
+
+.tech-angular i {
+    color: #dd0031;
+}
+
+.tech-qt {
+    border-color: #41cd52;
+    background: linear-gradient(135deg, rgba(65, 205, 82, 0.1), rgba(0, 200, 150, 0.1));
+}
+
+.tech-qt i {
+    color: #41cd52;
+}
+
+.tech-numpy {
+    border-color: #4dabcf;
+    background: linear-gradient(135deg, rgba(1, 50, 67, 0.1), rgba(77, 171, 207, 0.1));
+}
+
+.tech-numpy i {
+    color: #4dabcf;
+}
+
+.tech-voice {
+    border-color: #9b59b6;
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.1));
+}
+
+.tech-voice i {
+    color: #9b59b6;
+}
+
+.tech-image {
+    border-color: #6c5ce7;
+    background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), rgba(162, 155, 254, 0.1));
+}
+
+.tech-image i {
+    color: #6c5ce7;
+}
+
+.tech-ai {
+    border-color: #e74c3c;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(243, 156, 18, 0.1));
+}
+
+.tech-ai i {
+    color: #e74c3c;
+}
+
+.tech-cascade {
+    border-color: #636e72;
+    background: linear-gradient(135deg, rgba(45, 52, 54, 0.1), rgba(99, 110, 114, 0.1));
+}
+
+.tech-cascade i {
+    color: #636e72;
+}
+
+.tech-other {
+    border-color: #74b9ff;
+    background: linear-gradient(135deg, rgba(116, 185, 255, 0.1), rgba(9, 132, 227, 0.1));
+}
+
+.tech-other i {
+    color: #74b9ff;
+}
+
+.tech-git {
+    border-color: #f05032;
+    background: linear-gradient(135deg, rgba(240, 80, 50, 0.1), rgba(241, 78, 50, 0.1));
+}
+
+.tech-git i {
+    color: #f05032;
+}
+
+.tech-github {
+    border-color: #333333;
+    background: linear-gradient(135deg, rgba(24, 23, 23, 0.1), rgba(51, 51, 51, 0.1));
+}
+
+.tech-github i {
+    color: #333333;
+}
+
+.tech-jwt {
+    border-color: #d63aff;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(214, 58, 255, 0.1));
+}
+
+.tech-jwt i {
+    color: #d63aff;
+}
+
+.tech-tts {
+    border-color: #4ecdc4;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+}
+
+.tech-tts i {
+    color: #4ecdc4;
+}
+
+.tech-pandas {
+    border-color: #150458;
+    background: linear-gradient(135deg, rgba(21, 4, 88, 0.1), rgba(255, 111, 0, 0.1));
+}
+
+.tech-pandas i {
+    color: #150458;
+}
+
+.tech-matplotlib {
+    border-color: #11557c;
+    background: linear-gradient(135deg, rgba(17, 85, 124, 0.1), rgba(255, 102, 0, 0.1));
+}
+
+.tech-matplotlib i {
+    color: #11557c;
+}
+
+.tech-api {
+    border-color: #00d4aa;
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.1), rgba(0, 245, 255, 0.1));
+}
+
+.tech-api i {
+    color: #00d4aa;
+}
+
+.tech-jupyter {
+    border-color: #f37626;
+    background: linear-gradient(135deg, rgba(243, 118, 38, 0.1), rgba(243, 118, 38, 0.1));
+}
+
+.tech-jupyter i {
+    color: #f37626;
+}
+
+.tech-json {
+    border-color: #424242;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(66, 66, 66, 0.1));
+}
+
+.tech-json i {
+    color: #424242;
 }
 
 /* Estilos para los enlaces de proyectos */
@@ -770,12 +1161,7 @@ a:hover {
         text-align: center;
     }
 
-    /* Ajustes para las listas de tecnologías */
-    .technologies-list {
-        justify-content: flex-start;
-        width: 100%;
-        box-sizing: border-box;
-    }
+    /* Ajustes generales para pantallas grandes */
 }
 
 /* Media Queries para pantallas grandes */
