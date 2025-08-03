@@ -5,6 +5,7 @@
     --text-color: #e0e0e0;
     --accent-color: #00f7ff; /* Cian brillante */
     --accent-hover-color: #00c5cc;
+    --accent-color-darker: #009499; /* Variable faltante */
     --subtle-border-color: #3a3f47;
     --card-shadow-color: rgba(0, 247, 255, 0.1);
     --card-shadow-hover-color: rgba(0, 247, 255, 0.15);
@@ -20,6 +21,7 @@
     --text-color: #212529;                   /* Negro suave */
     --accent-color: #007bff;                 /* Azul estándar */
     --accent-hover-color: #0056b3;           /* Azul más oscuro */
+    --accent-color-darker: #004085;          /* Variable faltante */
     --subtle-border-color: #ced4da;          /* Gris claro para bordes */
     --card-shadow-color: rgba(0, 0, 0, 0.1);
     --card-shadow-hover-color: rgba(0, 0, 0, 0.15);
@@ -28,7 +30,11 @@
     --scrollbar-track-color: #f4f6f8;
 }
 
-/* Estilos base */
+/* Estilos base - OPTIMIZADOS */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -40,112 +46,173 @@ body {
     position: relative;
 }
 
-/* Estilos del contenedor principal */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
-
-/* Estilos del header */
+/* Header - CONSISTENTE */
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     background-color: var(--medium-bg-color);
-    z-index: 1000;
+    color: var(--text-color);
     padding: 10px 20px;
-    box-sizing: border-box;
+    z-index: 1000;
     border-bottom: 1px solid var(--subtle-border-color);
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
 }
 
-/* Estilos del main */
+/* Main - OPTIMIZADO */
 main {
     padding-top: 68px;
-    padding-bottom: 60px;
-    min-height: calc(100vh - 128px);
+    padding-bottom: 70px;
+    min-height: calc(100vh - 138px);
     width: 100%;
-    box-sizing: border-box;
 }
 
-/* Estilos de las secciones */
+/* Container base - RESPONSIVE */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Secciones base - OPTIMIZADAS */
 .section {
     padding: 20px;
     margin: 0 auto;
     width: 100%;
-    box-sizing: border-box;
+    text-align: center;
 }
 
-/* Media Queries */
-/* Pantallas pequeñas (móviles) */
-@media (max-width: 774px) {
+/* MEDIA QUERIES OPTIMIZADAS */
+
+/* Pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
     .section {
-        padding: 15px;
+        padding: 15px 10px;
     }
 
     .portfolio-offer, 
     .projects-list li {
-        margin: 15px auto;
+        margin: 15px 0;
         padding: 15px;
     }
     
-    /* Tecnologías optimizadas para móviles */
     .technologies-list {
         gap: 6px;
+        justify-content: center;
+        max-width: 100%;
     }
     
-    .tech-badge {
-        padding: 6px 10px;
-        font-size: 0.75em;
-        border-radius: 14px;
-        min-width: 85px;
-        max-width: 140px;
-    }
-    
-    .tech-badge i {
-        font-size: 0.9em;
-    }
-}
-
-/* Pantallas extra pequeñas */
-@media (max-width: 480px) {
-    .technologies-list {
-        gap: 4px;
-    }
-    
-    .tech-badge {
+    .tech-badge,
+    .technologies-list li {
+        width: 100px !important;
+        height: 32px !important;
+        min-width: 100px !important;
+        max-width: 100px !important;
         padding: 5px 8px;
         font-size: 0.7em;
         border-radius: 12px;
-        min-width: 75px;
-        max-width: 120px;
     }
     
     .tech-badge i {
         font-size: 0.8em;
     }
-}
 
-/* Pantallas medianas */
-@media (min-width: 775px) and (max-width: 950px) {
-    .container {
-        padding: 0 20px;
+    .footer-icon-bar {
+        width: 95%;
+        max-width: none;
+        margin: 0 auto;
     }
 
+    .footer-collapsible-content {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (min-width: 481px) and (max-width: 774px) {
+    .container {
+        padding: 0 15px;
+    }
+    
     .section {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 20px;
+        padding: 15px;
     }
 
     .portfolio-offer, 
     .projects-list li {
+        margin: 15px 0;
+        padding: 15px;
+    }
+    
+    .technologies-list {
+        gap: 8px;
+        justify-content: center;
+        max-width: 100%;
+    }
+    
+    .tech-badge,
+    .technologies-list li {
+        width: 110px !important;
+        height: 34px !important;
+        min-width: 110px !important;
+        max-width: 110px !important;
+        padding: 6px 10px;
+        font-size: 0.75em;
+        border-radius: 14px;
+    }
+    
+    .tech-badge i {
+        font-size: 0.9em;
+    }
+
+    .footer-icon-bar {
+        width: 90%;
+        max-width: none;
+        margin: 0 auto;
+    }
+
+    .footer-collapsible-content {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+}
+
+/* Pantallas medianas (tablets) - CORREGIDO */
+@media (min-width: 775px) and (max-width: 950px) {
+    .container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .section {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .portfolio-offer, 
+    .projects-list li {
+        width: 100%;
         max-width: 800px;
         margin: 20px auto;
         padding: 25px;
+        box-sizing: border-box;
     }
 
     #main-nav.nav-visible {
@@ -153,42 +220,91 @@ main {
         left: 50%;
         transform: translateX(-50%);
         min-width: 280px;
+        background-color: var(--medium-bg-color);
+        border: 1px solid var(--subtle-border-color);
     }
     
-    /* Tecnologías optimizadas para tabletas */
     .technologies-list {
-        gap: 8px;
+        gap: 10px;
+        justify-content: center;
+        max-width: 100%;
     }
     
-    .tech-badge {
+    .tech-badge,
+    .technologies-list li {
+        width: 120px !important;
+        height: 36px !important;
+        min-width: 120px !important;
+        max-width: 120px !important;
         padding: 7px 12px;
         font-size: 0.8em;
-        min-width: 90px;
-        max-width: 150px;
+        flex: 0 0 auto;
     }
     
     .tech-badge i {
         font-size: 0.95em;
     }
+
+    .footer-icon-bar {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .footer-collapsible-content {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    /* Asegurar alineación correcta del texto */
+    .texto1 p,
+    .texto1 ul,
+    .texto1 li {
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .section h2 {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .section h3,
+    .section h4 {
+        text-align: left;
+        margin: 15px 0;
+    }
 }
 
 /* Pantallas grandes */
-@media (min-width: 951px) {
+@media (min-width: 951px) and (max-width: 1199px) {
     .container {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
         padding: 0 30px;
+        box-sizing: border-box;
     }
 
     .section {
-        max-width: 1200px;
+        width: 100%;
+        max-width: 1000px;
         margin: 0 auto;
         padding: 30px;
+        box-sizing: border-box;
     }
 
     .portfolio-offer, 
     .projects-list li {
-        max-width: 1000px;
+        width: 100%;
+        max-width: 900px;
         margin: 25px auto;
         padding: 30px;
+        box-sizing: border-box;
     }
 
     #main-nav.nav-visible {
@@ -198,25 +314,125 @@ main {
         max-width: 400px;
     }
     
-    /* Tecnologías optimizadas para pantallas grandes */
     .technologies-list {
-        gap: 10px;
+        gap: 12px;
+        justify-content: center;
         max-width: 100%;
     }
     
-    .tech-badge {
+    .tech-badge,
+    .technologies-list li {
+        width: 130px !important;
+        height: 38px !important;
+        min-width: 130px !important;
+        max-width: 130px !important;
         padding: 8px 14px;
         font-size: 0.85em;
-        min-width: 100px;
-        max-width: 160px;
+        flex: 0 0 auto;
     }
     
     .tech-badge i {
         font-size: 1em;
     }
+
+    .footer-icon-bar,
+    .footer-collapsible-content {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
 }
 
-/* Estilos específicos para el contenido */
+/* Pantallas extra grandes */
+@media (min-width: 1200px) {
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
+
+    .section {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .portfolio-offer, 
+    .projects-list li {
+        width: 100%;
+        max-width: 1000px;
+        margin: 25px auto;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    #main-nav.nav-visible {
+        width: 30%;
+        left: 0;
+        transform: none;
+        max-width: 400px;
+    }
+    
+    .technologies-list {
+        gap: 15px;
+        justify-content: center;
+        max-width: 100%;
+    }
+    
+    .tech-badge,
+    .technologies-list li {
+        width: 140px !important;
+        height: 40px !important;
+        min-width: 140px !important;
+        max-width: 140px !important;
+        padding: 9px 16px;
+        font-size: 0.9em;
+        flex: 0 0 auto;
+    }
+    
+    .tech-badge i {
+        font-size: 1.1em;
+    }
+
+    .footer-icon-bar,
+    .footer-collapsible-content {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+}
+
+/* Pantallas ultra grandes - Distribución óptima de tecnologías */
+@media (min-width: 1400px) {
+    .technologies-list {
+        gap: 18px;
+        justify-content: center;
+        max-width: 100%;
+    }
+    
+    .tech-badge,
+    .technologies-list li {
+        width: 150px !important;
+        height: 42px !important;
+        min-width: 150px !important;
+        max-width: 150px !important;
+        padding: 10px 18px;
+        font-size: 0.95em;
+        flex: 0 0 auto;
+    }
+    
+    .tech-badge i {
+        font-size: 1.2em;
+    }
+}
+
+/* Elementos específicos del contenido */
 .texto1 {
     text-align: left;
     width: 100%;
@@ -244,6 +460,10 @@ main {
     border-radius: 8px;
     box-shadow: 0 4px 10px var(--card-shadow-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    margin: 20px auto;
+    padding: 25px;
+    width: 100%;
+    max-width: 100%;
 }
 
 .portfolio-offer:hover, 
@@ -253,142 +473,11 @@ main {
     border-color: var(--accent-color);
 }
 
-/* Estilos para el footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: transparent;
-    z-index: 1000;
-}
-
-.footer-icon-bar {
-    background-color: var(--medium-bg-color);
-    border-top: 1px solid var(--subtle-border-color);
-    border-left: 1px solid var(--subtle-border-color);
-    border-right: 1px solid var(--subtle-border-color);
-    border-radius: 15px 15px 0 0;
-    padding: 8px 15px;
-    margin: 0 auto;
-    box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
-}
-
-.footer-collapsible-content {
-    background-color: var(--medium-bg-color);
-    border-top: 1px solid var(--subtle-border-color);
-    padding: 20px;
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Ajustes específicos para el rango problemático */
-@media (min-width: 775px) and (max-width: 950px) {
-    .container {
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .section {
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-
-    .portfolio-offer, 
-    .projects-list li {
-        width: 100%;
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 25px;
-    }
-
-    .footer-icon-bar,
-    .footer-collapsible-content {
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    /* Asegurar que el contenido de texto esté correctamente alineado */
-    .texto1 p,
-    .texto1 ul,
-    .texto1 li {
-        text-align: left;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Ajustar espaciado de elementos */
-    .section h2 {
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    .section h3 {
-        margin: 20px 0;
-    }
-
-    .section h4 {
-        margin: 15px 0;
-    }
-
-    /* Ajustar listas */
-    .technologies-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin: 15px 0;
-    }
-
-    .technologies-list li {
-        margin: 0;
-    }
-}
-
-/* Estilos para el cuerpo de la página */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Arial', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: var(--medium-bg-color);
-    color: var(--text-color);
-    width: 100%;
-    padding: 10px 20px;
-    text-align: left;
-    z-index: 100;
-    box-sizing: border-box;
-    border-bottom: 1px solid var(--subtle-border-color);
-    transition: background-color 0.3s ease, border-bottom 0.3s ease;
-}
-
-.header-title-group {
-    /* No se necesita mucho aquí si el header es flex y space-between */
-}
-
+/* Header controls styling */
 .header-controls {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre los botones */
+    gap: 10px;
 }
 
 #theme-toggle-button,
@@ -411,8 +500,8 @@ header {
 #theme-toggle-button:hover,
 #language-toggle-button:hover,
 #menu-toggle:hover {
-    background-color: var(--accent-color-darker); /* Color de fondo al pasar el mouse, más oscuro que el acento */
-    color: var(--bg-color); /* Color del icono al pasar el mouse, contrastando con el fondo del botón */
+    background-color: var(--accent-color-darker);
+    color: var(--bg-color);
     border-color: var(--accent-color-darker);
 }
 
@@ -530,11 +619,13 @@ main {
     list-style: none;
     padding: 0;
     margin: 15px 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: flex-start;
-    align-items: center;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px;
+    justify-content: center !important;
+    align-items: stretch;
+    max-width: 100%;
+    width: 100%;
 }
 
 .technologies-list li {
@@ -547,19 +638,49 @@ main {
     border-radius: 0 !important;
     transform: none !important;
     
-    /* Aplicar nuevos estilos solo al contenido */
-    display: inline-block;
+    /* Aplicar estilos de tech-badge directamente a li */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
     transition: all 0.3s ease;
+    
+    /* Estilos de badge aplicados directamente */
+    width: 120px !important;
+    height: 36px !important;
+    min-width: 120px !important;
+    max-width: 120px !important;
+    padding: 8px 12px !important;
+    border-radius: 16px !important;
+    font-size: 0.85em !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    
+    /* Fondo sutil uniforme */
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-color) !important;
+    backdrop-filter: blur(10px) !important;
+    
+    /* Centrar texto */
+    text-align: center !important;
+    line-height: 1.2 !important;
 }
 
 .technologies-list li:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--accent-color) !important;
 }
 
 /* Estilos específicos para los badges de tecnología */
 .tech-badge {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
     padding: 8px 12px;
     border-radius: 16px;
@@ -569,10 +690,13 @@ main {
     white-space: nowrap;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    min-width: 100px;
-    max-width: 160px;
-    justify-content: center;
-    text-align: center;
+    
+    /* Tamaños fijos y uniformes - con !important para evitar conflictos */
+    width: 120px !important;
+    height: 36px !important;
+    min-width: 120px !important;
+    max-width: 120px !important;
+    flex: 0 0 auto !important;
     
     /* Fondo sutil uniforme que permite ver iconos */
     background: rgba(255, 255, 255, 0.05);
@@ -595,10 +719,6 @@ main {
 }
 
 /* Animaciones suaves para las tecnologías */
-.technologies-list li:hover {
-    transform: translateY(-2px);
-}
-
 /* Efecto de foco mejorado para accesibilidad */
 .technologies-list li:focus-visible {
     outline: 2px solid var(--accent-color);
@@ -1040,157 +1160,7 @@ a:hover {
   scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
 }
 
-/* Media Queries para pantallas medianas */
-@media (min-width: 775px) and (max-width: 950px) {
-    /* Estilos para el header */
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 100;
-    }
-
-    /* Estilos para el main */
-    main {
-        padding-top: 68px;
-        padding-bottom: 60px;
-        min-height: calc(100vh);
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Estilos para las secciones */
-    .section {
-        padding: 20px;
-        margin: 0 auto;
-        max-width: 900px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Estilos para las tarjetas de proyectos y portafolio */
-    .portfolio-offer, 
-    .projects-list li {
-        margin: 20px auto;
-        max-width: 800px;
-        padding: 25px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Estilos para la navegación */
-    #main-nav.nav-visible {
-        width: 30%;
-        left: 50%;
-        transform: translateX(-50%);
-        min-width: 280px;
-        background-color: var(--medium-bg-color);
-        border: 1px solid var(--subtle-border-color);
-    }
-
-    #main-nav.nav-visible ul li {
-        border-bottom: 1px solid var(--subtle-border-color);
-    }
-
-    #main-nav.nav-visible ul li a {
-        color: var(--text-color);
-        padding: 15px 20px;
-    }
-
-    #main-nav.nav-visible ul li a:hover,
-    #main-nav.nav-visible ul li a.selected {
-        background-color: var(--accent-color);
-        color: var(--btn-text-color);
-    }
-
-    /* Estilos para el footer */
-    footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
-
-    .footer-icon-bar {
-        max-width: 900px;
-        margin: 0 auto;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .footer-collapsible-content {
-        max-width: 900px;
-        margin: 0 auto;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Ajustes específicos para el contenido */
-    .texto1 {
-        text-align: left;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .portfolio-offers {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .projects-list {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Ajustes para la imagen de perfil */
-    .profile-image {
-        width: 200px;
-        height: auto;
-        border-radius: 50%;
-        margin: 20px auto;
-    }
-
-    /* Ajustes para los títulos */
-    .section h2 {
-        margin-bottom: 30px;
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Ajustes generales para pantallas grandes */
-}
-
-/* Media Queries para pantallas grandes */
-@media (min-width: 1000px) {
-    .section {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 30px;
-    }
-
-    .portfolio-offer, 
-    .projects-list li {
-        max-width: 1000px;
-        margin: 25px auto;
-    }
-
-    #main-nav.nav-visible {
-        width: 30%;
-        left: 0;
-        transform: none;
-        max-width: 400px;
-    }
-
-    .footer-icon-bar,
-    .footer-collapsible-content {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-}
+/* Media queries para responsive - CONSOLIDADO */
 
 /* El resto de los media queries no necesitan cambios específicos de color si todo usa variables */
 
@@ -1467,179 +1437,62 @@ footer {
     padding: 1%;
 }
 
+/* Optimizaciones para móviles en landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 950px) and (orientation: landscape) {
-
-    /* Estilos para modo apaisado en pantallas móviles */
-    /* Agrega tus estilos aquí */
-    /* Estilos para el cuerpo de la página */
     body {
         margin: 0;
         padding: 0;
-        background-color: var(--bg-color); /* CORREGIDO: Usar variable de tema */
+        background-color: var(--bg-color);
     }
 
     header {
         display: flex;
     }
 
-    #menu-toggle { /* Asegurar que el botón de menú sea visible en landscape móvil */
+    #menu-toggle {
         display: block;
     }
 
-    /* Estilos para el main */
     main {
-        /* top: 0px; */ /* Redundante */
-        /* margin-top: 0px; */ /* Redundante */
         min-height: calc(100vh);
-        padding-top: 68px; /* Consistente con header fijo */
-        padding-bottom: 60px; /* Consistente con footer fijo */
+        padding-top: 68px;
+        padding-bottom: 60px;
         box-sizing: border-box;
     }
 
-    /* Estilos para el último elemento */
     #portafolio {
         margin-bottom: 100px;
-        /* Ajusta el espacio para el footer */
     }
 
-    /* Estilos para la sección */
     .section {
         text-align: center;
     }
 
-    .section h6 {
-        margin-right: 100%;
-    }
-
-    /* Estilos para la imagen de perfil */
     .profile-image {
-        width: 200px;
+        width: 150px;
         height: auto;
         border-radius: 50%;
-        margin-bottom: 20px;
-        /* Agrega margen inferior */
-        margin-top: 20px;
+        margin: 15px auto;
     }
 
-    /* Estilos para el nombre */
-    .name {
-        margin-top: 20px;
-        margin-bottom: 10px;
-        /* Agrega margen inferior */
-    }
-
-    /* Estilos para la imagen de perfil */
-    .profile-image {
-        width: 200px;
-        height: auto;
-        border-radius: 50%;
-        margin-bottom: 20px;
-        margin-top: 10px;
-        /* Agrega margen inferior */
-    }
-
-    /* Estilos para la siguiente sección */
-    .next-section {
-        padding: 50px 0;
-        /* Espacio entre esta sección y la siguiente */
-    }
-
-    .portfolio-offer {
-        border: 2px solid #ccc;
-        /* Agrega un borde sólido de color gris */
-        border-radius: 5px;
-        /* Agrega esquinas redondeadas */
-        padding: 20px;
-        /* Agrega relleno interno para separar el contenido del borde */
-        margin-bottom: 20px;
-        /* Agrega margen inferior para separar las tarjetas */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        /* Agrega una sombra suave */
-        background-color: #fff;
-        /* Agrega un color de fondo blanco */
-    }
-
-    /* Estilos adicionales para resaltar las tarjetas al pasar el ratón */
-    .portfolio-offer:hover {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        /* Aumenta la sombra al pasar el ratón */
-        transition: box-shadow 0.3s ease;
-        /* Agrega una transición suave para la sombra */
-    }
-
-    .projects-list {
-        list-style: none;
-        /* Quita los estilos de lista por defecto */
-        padding: 0;
-        /* Elimina el relleno interno de la lista */
-    }
-
+    .portfolio-offer,
     .projects-list li {
-        border: 2px solid #ccc;
-        /* Agrega un borde sólido de color gris */
-        border-radius: 5px;
-        /* Agrega esquinas redondeadas */
+        border: 1px solid var(--subtle-border-color);
+        border-radius: 8px;
         padding: 20px;
-        /* Agrega relleno interno para separar el contenido del borde */
         margin-bottom: 20px;
-        /* Agrega margen inferior para separar los elementos de la lista */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        /* Agrega una sombra suave */
-        background-color: #fff;
-        /* Agrega un color de fondo blanco */
+        box-shadow: 0 4px 10px var(--card-shadow-color);
+        background-color: var(--medium-bg-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
+    .portfolio-offer:hover,
     .projects-list li:hover {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        /* Aumenta la sombra al pasar el ratón */
-        transition: box-shadow 0.3s ease;
-        /* Agrega una transición suave para la sombra */
+        box-shadow: 0 6px 15px var(--card-shadow-hover-color);
+        border-color: var(--accent-color);
+        transform: translateY(-5px);
     }
 
-    /* Estilos para el footer */
-    footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        background-color: #333;
-        color: #fff;
-        width: 100%;
-        padding-top: 1%;
-        margin-top: 20px;
-        /* Nuevo: Agrega un margen superior */
-        z-index: 100;
-        /* Asegura que esté encima de todo */
-    }
-
-    /* Estilos para el menú de navegación en el footer */
-    footer nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        /* Usa flexbox */
-    }
-
-    footer nav ul li {
-        margin-right: 10px;
-        /* Nuevo: Agrega espacio entre los elementos */
-    }
-
-    footer nav ul li:first-child {
-        margin-left: 0;
-    }
-
-    footer nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    footer nav ul li a:hover {
-        color: #ccc;
-    }
-
-    /* Estilos para los datos de contacto */
     .contact-info {
         display: flex;
         padding-bottom: 1%;
@@ -1647,12 +1500,10 @@ footer {
 
     .contact-info p {
         margin-right: 0.5px;
-        /* Espacio entre los elementos */
     }
 
     .contact-info p:last-child {
         margin-right: 0;
-        /* Elimina el espacio a la derecha del último elemento */
     }
 
     .contact-info a {
@@ -1680,26 +1531,16 @@ footer {
     .social-links {
         padding: 1%;
     }
+}
 
+/* Media queries adicionales simplificadas */
+@media (min-width: 400px) {
     #menu-toggle {
         display: block;
     }
 }
 
-/* Larger than mobile */
-@media (min-width: 400px) {
-    #menu-toggle { /* Mostrar botón de menú en pantallas pequeñas portrait también */
-        display: block;
-    }
-}
-
-/* Larger than phablet */
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
 @media (min-width: 750px) {
-
-    /* Estilos para el header */
     header {
         display: flex;
     }
@@ -1708,40 +1549,11 @@ footer {
         display: block;
     }
 
-    /* Estilos para el main */
     main {
-        /* top: 120px; */ /* Quitado */
-        /* margin-top: 100px; */ /* Quitado */
-        min-height: calc(100vh); /* Ajustado */
-        padding-top: 68px;    /* Consistente con header fijo */
-        padding-bottom: 60px; /* Consistente con footer fijo */
+        min-height: calc(100vh);
+        padding-top: 68px;
+        padding-bottom: 60px;
         box-sizing: border-box;
-    }
-}
-
-/* Estilos de #main-nav.nav-visible para pantallas medianas */
-@media (min-width: 750px) and (max-width: 999px) {
-    #main-nav.nav-visible {
-        width: 30%;
-        left: 50%;
-        transform: translateX(-50%); /* Centrar el nav */
-        min-width: 280px; /* Para asegurar legibilidad */
-        background-color: var(--medium-bg-color); /* Reforzar el color de fondo */
-        /* Los colores del texto y enlaces internos deberían heredarse correctamente */
-        /* Si los enlaces no toman el color, se podría añadir: */
-        /* #main-nav.nav-visible ul li a { color: var(--text-color); } */
-        /* #main-nav.nav-visible ul li a:hover, */
-        /* #main-nav.nav-visible ul li a.selected { background-color: var(--accent-color); color: var(--btn-text-color); } */
-    }
-}
-
-/* Estilos de #main-nav.nav-visible para pantallas grandes */
-@media (min-width: 1000px) {
-    #main-nav.nav-visible {
-        width: 30%;
-        left: 0; /* Alineado a la izquierda */
-        transform: translateX(0%);
-        /* max-width: 400px; */ /* Opcional: si 30% es demasiado grande */
     }
 }
 
@@ -1827,7 +1639,7 @@ body:not(.light-theme) #particles-canvas {
     }
 }
 
-/* Ajustes para dispositivos con preferencias de movimiento reducido */
+/* Ajustes finales para z-index y optimización */
 @media (prefers-reduced-motion: reduce) {
     #particles-canvas {
         opacity: 0.3;
@@ -1836,7 +1648,6 @@ body:not(.light-theme) #particles-canvas {
     }
 }
 
-/* Optimización para dispositivos de bajo rendimiento */
 @media (max-width: 480px), (max-height: 600px) {
     #particles-canvas {
         opacity: 0.5;
@@ -1844,7 +1655,6 @@ body:not(.light-theme) #particles-canvas {
     }
 }
 
-/* Dispositivos con alta densidad de píxeles */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     #particles-canvas {
         image-rendering: -webkit-optimize-contrast;
@@ -1858,9 +1668,3 @@ header, main, footer, nav, .container, .section {
     position: relative;
     z-index: 1;
 }
-
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}

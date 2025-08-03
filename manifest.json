@@ -1,0 +1,35 @@
+{
+    "name": "Edisson Giraldo - Ingeniero de Software e IA",
+    "short_name": "Edisson IA",
+    "description": "Servicios profesionales en Inteligencia Artificial, Machine Learning y desarrollo de software",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1a1e24",
+    "theme_color": "#00f7ff",
+    "orientation": "portrait-primary",
+    "categories": [
+        "business",
+        "productivity",
+        "education"
+    ],
+    "lang": "es",
+    "scope": "/",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "img/fotohojaVD.png",
+            "type": "image/png",
+            "sizes": "400x400",
+            "label": "Edisson Giraldo - Perfil Profesional"
+        }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false
+}

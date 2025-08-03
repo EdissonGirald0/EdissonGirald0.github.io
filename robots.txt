@@ -1,3 +1,42 @@
 User-agent: *
 Allow: /
+Allow: /img/
+Allow: /css/
+Allow: /js/
+Crawl-delay: 1
+
+# Archivos críticos para indexación
+Allow: /feed.xml
+Allow: /manifest.json
+Allow: /index.html
+
+# Priorizar contenido principal para SEO
+Allow: /#quien-soy
+Allow: /#proyectos
+Allow: /#portafolio
+
+# CV y archivos importantes
+Allow: /img/Hoja de vida adtualizada2024.pdf
+Allow: /img/fotohojaVD.png
+
+# Optimización específica por motor de búsqueda
+User-agent: Googlebot
+Crawl-delay: 0
+Allow: /
+
+User-agent: Bingbot
+Crawl-delay: 1
+Allow: /
+
+# Sitemaps para indexación acelerada
 Sitemap: https://edissongirald0.github.io/sitemap.xml
+Sitemap: https://edissongirald0.github.io/feed.xml
+
+# URLs prioritarias para indexación inmediata
+# https://edissongirald0.github.io/
+# https://edissongirald0.github.io/index.html
+
+# Términos relevantes para motores de búsqueda:
+# Ingeniero de Software, Inteligencia Artificial, Machine Learning
+# Servicios profesionales IA, Desarrollo de software inteligente
+# Automatización con IA, Consultoría tecnológica, Python, FastAPI

@@ -1,0 +1,9 @@
+Contact: mailto:edisson.giraldo.dev@gmail.com
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: es, en
+Canonical: https://edissongirald0.github.io/.well-known/security.txt
+Policy: https://edissongirald0.github.io/
+Hiring: https://edissongirald0.github.io/#portafolio
+
+# Edisson Giraldo - Ingeniero de Software e Inteligencia Artificial
+# Especialista en desarrollo de software seguro y soluciones IA

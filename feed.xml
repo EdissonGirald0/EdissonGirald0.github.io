@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Edisson Giraldo - Ingeniero de Software e Inteligencia Artificial</title>
+        <link>https://edissongirald0.github.io/</link>
+        <description>Últimos proyectos y servicios en Inteligencia Artificial, Machine Learning y desarrollo de software</description>
+        <language>es-ES</language>
+        <copyright>© 2025 Edisson Giraldo</copyright>
+        <managingEditor>edisson.giraldo.dev@gmail.com (Edisson Giraldo)</managingEditor>
+        <webMaster>edisson.giraldo.dev@gmail.com (Edisson Giraldo)</webMaster>
+        <lastBuildDate>Sat, 03 Aug 2025 00:00:00 GMT</lastBuildDate>
+        <category>Tecnología</category>
+        <category>Inteligencia Artificial</category>
+        <category>Desarrollo de Software</category>
+        
+        <item>
+            <title>Servicios Profesionales en Inteligencia Artificial</title>
+            <link>https://edissongirald0.github.io/#portafolio</link>
+            <description>Desarrollo de chatbots IA, automatización de procesos con Machine Learning y consultoría tecnológica especializada</description>
+            <content:encoded><![CDATA[
+                <h2>Servicios Profesionales en IA y Machine Learning</h2>
+                <p>Ofrezco servicios especializados en:</p>
+                <ul>
+                    <li>Desarrollo de chatbots con IA avanzada</li>
+                    <li>Automatización de procesos empresariales</li>
+                    <li>Análisis de datos con Machine Learning</li>
+                    <li>Consultoría tecnológica en IA</li>
+                </ul>
+            ]]></content:encoded>
+            <pubDate>Sat, 03 Aug 2025 00:00:00 GMT</pubDate>
+            <guid>https://edissongirald0.github.io/#portafolio</guid>
+        </item>
+        
+        <item>
+            <title>Proyectos de Inteligencia Artificial</title>
+            <link>https://edissongirald0.github.io/#proyectos</link>
+            <description>Agapito - Yerbatero Digital, análisis de datos con IA y desarrollo de aplicaciones inteligentes</description>
+            <content:encoded><![CDATA[
+                <h2>Proyectos Destacados en IA</h2>
+                <p>Desarrollo proyectos innovadores utilizando tecnologías de vanguardia:</p>
+                <ul>
+                    <li>Chatbots especializados con FastAPI y Gemini</li>
+                    <li>Sistemas de análisis de datos con TensorFlow</li>
+                    <li>Aplicaciones web inteligentes con React y Python</li>
+                </ul>
+            ]]></content:encoded>
+            <pubDate>Fri, 02 Aug 2025 00:00:00 GMT</pubDate>
+            <guid>https://edissongirald0.github.io/#proyectos</guid>
+        </item>
+    </channel>
+</rss>

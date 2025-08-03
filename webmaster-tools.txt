@@ -1,0 +1,19 @@
+# Herramientas de Verificación para Webmasters
+# Edisson Giraldo - Ingeniero de Software e Inteligencia Artificial
+
+# Google Search Console
+# Archivo: google2141009ac80f8be0.html (ya existente)
+
+# Microsoft Bing Webmaster Tools
+# Para agregar: msvalidate.01
+User-agent: bingbot
+Allow: /
+
+# Yandex Webmaster
+# Para agregar verificación Yandex
+User-agent: YandexBot
+Allow: /
+
+# Yahoo Site Explorer (Discontinued but for legacy)
+User-agent: Slurp
+Allow: /
