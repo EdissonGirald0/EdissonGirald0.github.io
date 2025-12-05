@@ -1,0 +1,32 @@
+[
+    {
+        "id": "intro-ia-2025",
+        "title": "El Futuro de la IA en 2025",
+        "date": "2025-12-01",
+        "author": "Edisson Giraldo",
+        "summary": "Explorando las tendencias emergentes en inteligencia artificial y cómo transformarán la industria del software.",
+        "content": "<h2>El Futuro de la IA</h2><p>La inteligencia artificial está evolucionando a un ritmo sin precedentes. En 2025, vemos una integración más profunda de los LLMs en los flujos de trabajo de desarrollo...</p><h3>Agentes Autónomos</h3><p>Los agentes autónomos están cambiando la forma en que interactuamos con el software, permitiendo automatizaciones complejas...</p>",
+        "tags": ["IA", "Tendencias", "Tecnología"],
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+        "id": "python-fastapi",
+        "title": "Construyendo APIs veloces con FastAPI",
+        "date": "2025-11-20",
+        "author": "Edisson Giraldo",
+        "summary": "Una guía práctica para desarrollar APIs de alto rendimiento utilizando Python y FastAPI.",
+        "content": "<h2>¿Por qué FastAPI?</h2><p>FastAPI se ha convertido en el estándar para APIs modernas en Python gracias a su velocidad y facilidad de uso...</p><pre><code>from fastapi import FastAPI\napp = FastAPI()\n\n@app.get('/')\ndef read_root():\n    return {'Hello': 'World'}</code></pre>",
+        "tags": ["Python", "FastAPI", "Backend"],
+        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+        "id": "optimizacion-web",
+        "title": "Optimización Web para SEO",
+        "date": "2025-11-15",
+        "author": "Edisson Giraldo",
+        "summary": "Estrategias clave para mejorar el rendimiento y la visibilidad de tu sitio web en los motores de búsqueda.",
+        "content": "<h2>Core Web Vitals</h2><p>Google pone cada vez más énfasis en la experiencia del usuario. Optimizar el LCP, FID y CLS es crucial...</p>",
+        "tags": ["SEO", "Web", "Optimización"],
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
+    }
+]

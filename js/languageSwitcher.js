@@ -9,9 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
             themeToggleLabel: "Cambiar tema",
             languageToggleLabel: "Cambiar idioma",
             menuToggleLabel: "Alternar navegación",
+            navHome: "Inicio",
             navWhoAmI: "Quién soy",
             navProjects: "Proyectos",
             navPortfolio: "Portafolio",
+            navBlog: "Blog",
             navLinkedIn: "LinkedIn",
             navGithub: "Github",
             navWhatsApp: "WhatsApp",
@@ -138,13 +140,15 @@ document.addEventListener('DOMContentLoaded', () => {
             footerNavWhoAmI: "Quién soy",
             footerNavProjects: "Proyectos",
             footerNavPortfolio: "Portafolio",
+            footerNavBlog: "Blog",
             footerNavDownloadCV: "Descargar CV",
             footerAddressLabel: "Dirección:",
             footerPhone: "Teléfono:",
             footerEmail: "Correo electrónico:",
             footerLinkedIn: "LinkedIn",
             footerGithub: "Github",
-            footerWhatsApp: "WhatsApp"
+            footerWhatsApp: "WhatsApp",
+            blogRecentArticles: "Artículos Recientes"
         },
         en: {
             pageTitle: "Edisson Giraldo's Portfolio - Software Engineer",
@@ -153,9 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
             themeToggleLabel: "Toggle theme",
             languageToggleLabel: "Change language",
             menuToggleLabel: "Toggle navigation",
+            navHome: "Home",
             navWhoAmI: "About Me",
             navProjects: "Projects",
             navPortfolio: "Portfolio",
+            navBlog: "Blog",
             navLinkedIn: "LinkedIn",
             navGithub: "Github",
             navWhatsApp: "WhatsApp",
@@ -282,13 +288,15 @@ document.addEventListener('DOMContentLoaded', () => {
             footerNavWhoAmI: "About Me",
             footerNavProjects: "Projects",
             footerNavPortfolio: "Portfolio",
+            footerNavBlog: "Blog",
             footerNavDownloadCV: "Download CV",
             footerAddressLabel: "Address:",
             footerPhone: "Phone:",
             footerEmail: "Email:",
             footerLinkedIn: "LinkedIn",
             footerGithub: "Github",
-            footerWhatsApp: "WhatsApp"
+            footerWhatsApp: "WhatsApp",
+            blogRecentArticles: "Recent Articles"
         }
     };
 

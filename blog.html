@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog de Edisson Giraldo - Artículos sobre Inteligencia Artificial, Desarrollo de Software y Tecnología.">
+    <meta name="author" content="Edisson Giraldo">
+    
+    <title>Blog - Edisson Giraldo</title>
+    <link rel="icon" href="favicon.svg" type="image/x-icon">
+    
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+
+<body>
+    <header class="fixed-top" id="pageHeader">
+        <div class="header-title-group">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1 data-i18n-key="headerH1">Edisson Giraldo</h1>
+                <h2>Blog</h2>
+            </a>
+        </div>
+        <div class="header-controls">
+            <button id="theme-toggle-button" aria-label="Toggle theme" data-i18n-aria-label-key="themeToggleLabel">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button id="language-toggle-button" aria-label="Change language" data-i18n-aria-label-key="languageToggleLabel">
+                🇪🇸
+            </button>
+            <button id="menu-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false" data-i18n-aria-label-key="menuToggleLabel">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html"><span data-i18n-key="navHome">Inicio</span></a></li>
+                <li><a href="index.html#proyectos"><span data-i18n-key="navProjects">Proyectos</span></a></li>
+                <li><a href="index.html#portafolio"><span data-i18n-key="navPortfolio">Portafolio</span></a></li>
+                <li><a href="blog.html" class="selected"><span data-i18n-key="navBlog">Blog</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container blog-container">
+        <div class="row">
+            <div class="twelve columns">
+                <div class="blog-header">
+                    <h2 data-i18n-key="blogRecentArticles">Artículos Recientes</h2>
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Buscar artículos...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="tags-filter" id="tagsFilter">
+                        <!-- Tags will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="blog-grid" class="blog-grid">
+            <!-- Blog posts will be injected here -->
+            <div class="loading">Cargando artículos...</div>
+        </div>
+
+        <!-- Modal for reading posts -->
+        <div id="post-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modal-body">
+                    <!-- Post content will be injected here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="fixed-bottom footer">
+        <div class="container">
+            <div class="footer-icon-bar row">
+                <div class="footer-icon-item column">
+                    <button id="footer-nav-toggle" aria-label="Toggle footer navigation" aria-controls="footer-nav-content" aria-expanded="false" data-i18n-aria-label-key="footerNavToggleLabel">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
+                </div>
+                <div class="footer-icon-item column">
+                    <button id="footer-contact-toggle" aria-label="Toggle contact information" aria-controls="footer-contact-content" aria-expanded="false" data-i18n-aria-label-key="footerContactToggleLabel">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                </div>
+                <div class="footer-icon-item column">
+                    <button onclick="scrollToTop()" id="goTopButton" title="Ir arriba" data-i18n-title-key="goTopButtonTitle">
+                        <i class="fas fa-arrow-up"></i> <span data-i18n-key="goTopButtonText"></span>
+                    </button>
+                </div>
+            </div>
+            <div id="footer-nav-content" class="footer-collapsible-content" style="display: none;">
+                <ul class="footer-nav">
+                    <li><a href="index.html"><span data-i18n-key="navHome">Inicio</span></a></li>
+                    <li><a href="index.html#proyectos"><span data-i18n-key="footerNavProjects"></span></a></li>
+                    <li><a href="index.html#portafolio"><span data-i18n-key="footerNavPortfolio"></span></a></li>
+                    <li><a href="blog.html" class="selected"><span data-i18n-key="footerNavBlog">Blog</span></a></li>
+                    <li><a href="img/Hoja de vida adtualizada2024.pdf" download="EdissonGirald0.pdf" class="btn">
+                        <i class="fas fa-download"></i> <span data-i18n-key="footerNavDownloadCV"></span>
+                    </a></li>
+                </ul>
+            </div>
+            <div id="footer-contact-content" class="footer-collapsible-content" style="display: none;">
+                <p>
+                    <span data-i18n-key="footerAddressLabel"></span>
+                    <a href="https://www.google.com/maps?q=Carrera+1a+%2318-35,+Mosquera,+Cundinamarca,+Colombia" target="_blank">
+                        Carrera 1a #18-35, Mosquera (Cundinamarca), Colombia
+                        <i class="fas fa-map-marker-alt"></i>
+                    </a>
+                </p>
+                <p><i class="fas fa-phone"></i> <span data-i18n-key="footerPhone"></span> <a href="tel:+573025576453">+57 302 5576453</a></p>
+                <p><i class="fas fa-envelope"></i> <span data-i18n-key="footerEmail"></span> <a href="mailto:edisson.giraldo.dev@gmail.com">edisson.giraldo.dev@gmail.com</a></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/edisson-giraldo-00586496" target="_blank">
+                        <i class="fab fa-linkedin"></i> <span data-i18n-key="footerLinkedIn"></span>
+                    </a>
+                    <a href="https://github.com/EdissonGirald0" target="_blank">
+                        <i class="fab fa-github"></i> <span data-i18n-key="footerGithub"></span>
+                    </a>
+                    <a href="https://wa.me/573025576453" target="_blank">
+                        <i class="fab fa-whatsapp"></i> <span data-i18n-key="footerWhatsApp"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/themeSwitcher.js"></script>
+    <script src="js/languageSwitcher.js"></script>
+    <script src="js/acordeonFooter.js"></script>
+    <script src="js/blog.js"></script>
+    <script>
+        // Simple menu toggle for mobile (reusing logic if possible or simple implementation)
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var nav = document.getElementById('main-nav');
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'block';
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
