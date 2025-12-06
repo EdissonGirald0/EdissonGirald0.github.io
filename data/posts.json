@@ -1,32 +1,54 @@
 [
     {
-        "id": "intro-ia-2025",
-        "title": "El Futuro de la IA en 2025",
-        "date": "2025-12-01",
+        "id": "lanzamiento-nivel-codigo",
+        "title": "Bienvenidos a Nivel Código: Tu Puerta al Futuro Tech 🚀",
+        "date": "2025-12-06",
         "author": "Edisson Giraldo",
-        "summary": "Explorando las tendencias emergentes en inteligencia artificial y cómo transformarán la industria del software.",
-        "content": "<h2>El Futuro de la IA</h2><p>La inteligencia artificial está evolucionando a un ritmo sin precedentes. En 2025, vemos una integración más profunda de los LLMs en los flujos de trabajo de desarrollo...</p><h3>Agentes Autónomos</h3><p>Los agentes autónomos están cambiando la forma en que interactuamos con el software, permitiendo automatizaciones complejas...</p>",
-        "tags": ["IA", "Tendencias", "Tecnología"],
-        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000"
+        "summary": "No es solo un canal, es tu incubadora de talento digital. Descubre cómo transformamos consumidores de tecnología en creadores de innovación.",
+        "content": "<h2>La Revolución Empieza Aquí</h2><p>Vivimos en una era donde saber programar es el nuevo superpoder. En <strong>Nivel Código</strong>, no solo enseñamos sintaxis; enseñamos a pensar, a crear y a solucionar problemas reales.</p><p>Nuestra misión es democratizar la educación tecnológica de alta calidad, ofreciendo rutas de aprendizaje estructuradas que te llevarán desde 'Hola Mundo' hasta desplegar aplicaciones profesionales.</p><div style='text-align:center; margin: 30px 0;'><a href='https://www.youtube.com/@SolveAI-om8hd' target='_blank' style='background-color: #FF0000; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(255,0,0,0.3); transition: transform 0.2s;'><span>📺</span> Suscríbete al Canal Oficial</a></div><h3>Nuestras Series Principales</h3><div style='display: grid; gap: 15px; margin-top: 20px;'><div style='border-left: 4px solid #00f7ff; padding-left: 15px;'><h4 style='color: #00f7ff; margin-bottom: 5px;'>Blue Series: Desarrollo Web</h4><p>Domina el arte de la web. Desde HTML5 semántico hasta aplicaciones reactivas con frameworks modernos.</p></div><div style='border-left: 4px solid #ff4d4d; padding-left: 15px;'><h4 style='color: #ff4d4d; margin-bottom: 5px;'>Red Series: Hardware & IoT</h4><p>Conecta el mundo físico con el digital. Arduino, ESP32, sensores y protocolos de comunicación para el Internet de las Cosas.</p></div><div style='border-left: 4px solid #00ff00; padding-left: 15px;'><h4 style='color: #00ff00; margin-bottom: 5px;'>Green Series: Lógica & Algoritmos</h4><p>El gimnasio para tu cerebro. Aprende Python y domina las estructuras de datos que mueven el software mundial.</p></div></div>",
+        "tags": [
+            "Carrera",
+            "Noticias"
+        ],
+        "image": "img/logooriginal.png"
     },
     {
-        "id": "python-fastapi",
-        "title": "Construyendo APIs veloces con FastAPI",
-        "date": "2025-11-20",
+        "id": "ruta-iot-experto",
+        "title": "Red Series: De Cero a Experto en Internet de las Cosas 🔴",
+        "date": "2025-12-05",
         "author": "Edisson Giraldo",
-        "summary": "Una guía práctica para desarrollar APIs de alto rendimiento utilizando Python y FastAPI.",
-        "content": "<h2>¿Por qué FastAPI?</h2><p>FastAPI se ha convertido en el estándar para APIs modernas en Python gracias a su velocidad y facilidad de uso...</p><pre><code>from fastapi import FastAPI\napp = FastAPI()\n\n@app.get('/')\ndef read_root():\n    return {'Hello': 'World'}</code></pre>",
-        "tags": ["Python", "FastAPI", "Backend"],
-        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000"
+        "summary": "Rompe la barrera de la pantalla. Aprende a controlar el mundo físico con código, desde encender un LED hasta domótica avanzada.",
+        "content": "<h2>¿Te imaginas controlar tu casa desde el celular?</h2><p>Encender las luces al llegar, ajustar la temperatura antes de salir del trabajo, recibir una alerta si una ventana queda abierta… Lo que antes parecía ciencia ficción hoy es realidad gracias al Internet de las Cosas (IoT). Esta revolución silenciosa está redefiniendo no solo nuestros hogares, sino ciudades, industrias y formas de vida: sensores inteligentes, dispositivos interconectados y sistemas autónomos están transformando espacios pasivos en entornos vivos, responsivos y proactivos. Pero detrás de cada dispositivo que parpadea, de cada notificación oportuna, hay algo más valioso que la tecnología: hay intención, diseño y solución. Y eso es lo que te proponemos dominar.</p><h3>El Camino del Hardware</h3><ul><li><strong>Nivel 0: Fundamentos Electrónicos.</strong> Voltaje, corriente y tu primer circuito. Entenderás qué pasa realmente dentro de los cables.</li><li><strong>Nivel 1: Interacción Sensorial.</strong> Aprenderás a leer el entorno (luz, temperatura, distancia) y a reaccionar ante él. Proyectos: <em>Estación Meteorológica Personal</em>.</li><li><strong>Nivel 2: Actuadores y Movimiento.</strong> Motores, servos y pantallas OLED. Daremos vida y rostro a tus creaciones.</li><li><strong>Nivel 3: Conectividad Total.</strong> El salto a la nube. Protocolos MQTT, servidores web en chips ESP32 y control remoto global.</li></ul><p>Esta serie es práctica, sucia (en el buen sentido) y absolutamente fascinante.</p>",
+        "tags": [
+            "IoT",
+            "Hardware",
+            "Arduino",
+            "ESP32"
+        ],
+        "image": "img/ledIOT.png"
     },
     {
-        "id": "optimizacion-web",
-        "title": "Optimización Web para SEO",
-        "date": "2025-11-15",
+        "id": "intro-desarrollo-web",
+        "title": "Blue Series: Maestría en Desarrollo Web Moderno 🔵",
+        "date": "2025-12-04",
         "author": "Edisson Giraldo",
-        "summary": "Estrategias clave para mejorar el rendimiento y la visibilidad de tu sitio web en los motores de búsqueda.",
-        "content": "<h2>Core Web Vitals</h2><p>Google pone cada vez más énfasis en la experiencia del usuario. Optimizar el LCP, FID y CLS es crucial...</p>",
-        "tags": ["SEO", "Web", "Optimización"],
-        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
+        "summary": "La web es el sistema operativo del mundo. Domina el stack tecnológico que impulsa las empresas más grandes del planeta.",
+        "content": "<h2>Arquitectos del Mundo Digital</h2><p>El desarrollo web es mucho más que una disciplina técnica: es la síntesis armoniosa de lógica rigurosa, estética intencionada y empatía centrada en el usuario. Es la ciencia de transformar ideas abstractas en interfaces funcionales, y el arte de hacer que lo complejo parezca sencillo. No se trata únicamente de escribir líneas de código eficientes, sino de construir ecosistemas digitales que respondan a necesidades reales, que anticipen comportamientos, que escalen con el tiempo y que generen valor tangible. Cada proyecto es una oportunidad para diseñar no solo sitios web, sino experiencias memorables —estructuras digitales robustas, accesibles, inclusivas y sostenibles— donde la tecnología se pone al servicio de las personas. En esencia, los desarrolladores web somos arquitectos del presente y del futuro inmediato: diseñamos los cimientos invisibles sobre los que se erigen negocios, comunidades, identidades y movimientos. Y en cada línea de código, en cada decisión de diseño, dejamos una huella en el tejido del mundo conectado.</p><h3>Tu Arsenal Tecnológico</h3><p>En esta serie abordaremos el desarrollo web como una disciplina de ingeniería:</p><ul><li><strong>HTML5 Semántico:</strong> La base accesible y estructurada de la web moderna.</li><li><strong>CSS3 & Diseño Responsivo:</strong> Creación de interfaces fluidas, animaciones y layouts complejos con Flexbox y Grid.</li><li><strong>JavaScript (ES6+):</strong> El lenguaje que da vida a la web. Promesas, asincronía y manipulación del DOM.</li><li><strong>Ecosistema Moderno:</strong> Introducción a herramientas profesionales como Git, NPM y preprocesadores.</li></ul><p>Prepárate para construir portafolios, landing pages y aplicaciones web que destaquen en el mercado laboral.</p>",
+        "tags": [
+            "Web",
+            "Frontend",
+            "HTML/CSS"
+        ],
+        "image": "img/bannerweb.png"
+    },
+    {
+        "id": "logica-programacion",
+        "title": "Green Series: Lógica de Programación y Algoritmos 🟢",
+        "date": "2025-12-03",
+        "author": "Edisson Giraldo",
+        "summary": "El código es temporal, la lógica es eterna. Desarrolla el pensamiento computacional necesario para resolver cualquier problema.",
+        "content": "<h2>El Superpoder de Pensar Diferente</h2><p>Vivimos en una era donde el código ya no es territorio exclusivo de unos pocos: saber programar es el nuevo superpoder —la habilidad que te permite no solo entender el mundo digital, sino transformarlo. Cada app que usamos, cada plataforma que conecta vidas, cada innovación que mejora procesos… nace de una idea materializada mediante pensamiento computacional.<br><br>En Nivel Código, rechazamos la lógica obsoleta de “aprender por memorizar”. No enseñamos solo sintaxis, frameworks o atajos efímeros. Enseñamos a pensar con rigor, a crear con intención y a resolver problemas reales con impacto tangible. Porque un programador puede escribir código… pero un pensador tecnológico diseña el futuro.<br><br>Nuestra misión es clara y ambiciosa: democratizar la educación tecnológica de alta calidad. Creemos que el talento está distribuido equitativamente por el mundo; lo que no lo está es la oportunidad. Por eso hemos diseñado rutas de aprendizaje profundamente estructuradas, progresivas y centradas en la acción: hasta ese primer y emocionante <code dark>console.log('¡Hola, mundo!')</code>, hasta el despliegue de aplicaciones escalables en la nube, pasando por bases de datos, APIs, arquitectura de software, buenas prácticas y trabajo en equipo real.<br><br>Cada módulo está construido con dos pilares:<br>🔹 Profundidad conceptual —entender <em>por qué</em> algo funciona, no solo <em>cómo</em>.<br>🔹 Aplicación inmediata —proyectos auténticos, retos inspirados en la industria y retroalimentación constante.<br><br>No buscamos formar técnicos aislados, sino desarrolladores integrales: críticos, curiosos, éticos y colaborativos. Personas capaces de traducir necesidades humanas en soluciones digitales sostenibles.<br><br>Esta no es solo una escuela.<br>Es un movimiento.<br><br>Tu revolución tecnológica comienza hoy —no con un clic, sino con una decisión.<br>¿Estás listo para subir de nivel?</p>",
+        "tags": [    "Lógica", "Python", "Algoritmos"],
+        "image": "img/logica2.png"
     }
 ]

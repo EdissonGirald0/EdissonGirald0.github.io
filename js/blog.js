@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = 'blog-card';
             card.onclick = () => openPost(post);
 
-            const tagsHtml = post.tags.map(tag => `<span class="blog-tag">#${tag}</span>`).join('');
+            const tagsHtml = post.tags.map(tag => `<span class="blog-tag ${getTagClass(tag)}">#${tag}</span>`).join('');
 
             card.innerHTML = `
                 <div class="blog-card-image">
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Open Post Modal
     function openPost(post) {
-        const tagsHtml = post.tags.map(tag => `<span class="blog-tag">#${tag}</span>`).join('');
+        const tagsHtml = post.tags.map(tag => `<span class="blog-tag ${getTagClass(tag)}">#${tag}</span>`).join('');
         
         modalBody.innerHTML = `
             <img src="${post.image}" alt="${post.title}" class="post-detail-image">
@@ -142,5 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function formatDate(dateString) {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         return new Date(dateString).toLocaleDateString('es-ES', options);
+    }
+
+    function getTagClass(tag) {
+        const lowerTag = tag.toLowerCase();
+        if (lowerTag.includes('web') || lowerTag.includes('frontend') || lowerTag.includes('html')) return 'tag-web';
+        if (lowerTag.includes('iot') || lowerTag.includes('hardware') || lowerTag.includes('arduino') || lowerTag.includes('esp32')) return 'tag-iot';
+        if (lowerTag.includes('lógica') || lowerTag.includes('python') || lowerTag.includes('algoritmos')) return 'tag-logic';
+        if (lowerTag.includes('carrera') || lowerTag.includes('noticias')) return 'tag-career';
+        return '';
     }
 });

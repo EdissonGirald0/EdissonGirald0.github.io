@@ -148,7 +148,9 @@ document.addEventListener('DOMContentLoaded', () => {
             footerLinkedIn: "LinkedIn",
             footerGithub: "Github",
             footerWhatsApp: "WhatsApp",
-            blogRecentArticles: "Artículos Recientes"
+            blogRecentArticles: "Artículos Recientes",
+            subscribeChannel: "Suscríbete a Nivel Código",
+            blogUnderConstruction: "🚧 Zona en Construcción: Estamos preparando el mejor contenido para ti."
         },
         en: {
             pageTitle: "Edisson Giraldo's Portfolio - Software Engineer",
@@ -296,7 +298,9 @@ document.addEventListener('DOMContentLoaded', () => {
             footerLinkedIn: "LinkedIn",
             footerGithub: "Github",
             footerWhatsApp: "WhatsApp",
-            blogRecentArticles: "Recent Articles"
+            blogRecentArticles: "Recent Articles",
+            subscribeChannel: "Subscribe to Nivel Código",
+            blogUnderConstruction: "🚧 Development Zone: We are building the future of tech education. Stay tuned!"
         }
     };
 
