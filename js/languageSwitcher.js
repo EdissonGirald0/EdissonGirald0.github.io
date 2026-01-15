@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footerGithub: "Github",
             footerWhatsApp: "WhatsApp",
             blogRecentArticles: "Artículos Recientes",
-            subscribeChannel: "Suscríbete a Nivel Código",
+            subscribeChannel: "Suscríbete a Level Up Code",
             blogUnderConstruction: "🚧 Zona en Construcción: Estamos preparando el mejor contenido para ti."
         },
         en: {
@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footerGithub: "Github",
             footerWhatsApp: "WhatsApp",
             blogRecentArticles: "Recent Articles",
-            subscribeChannel: "Subscribe to Nivel Código",
+            subscribeChannel: "Subscribe to Level Up Code",
             blogUnderConstruction: "🚧 Development Zone: We are building the future of tech education. Stay tuned!"
         }
     };
